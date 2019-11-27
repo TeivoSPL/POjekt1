@@ -16,7 +16,6 @@ public class EvoAnimal {
     private Vector2d placement;
     private IWorldMap map;
     private LinkedList<IPositionChangeObserver> observers;
-    private Map<String,Double> genes;                           //mapa dla genow, nazwa genu -> wartość
     private int energy;
 
     public EvoAnimal(IWorldMap map, Vector2d initialPosition){
@@ -24,7 +23,6 @@ public class EvoAnimal {
         this.observers = new LinkedList<>();
         this.map = map;
         this.placement = initialPosition;
-        this.genes = new HashMap<>();
         this.energy = 10;
     }
 
@@ -77,6 +75,10 @@ public class EvoAnimal {
         return energy;
     }
 
+    public void live() {
+        this.energy -= 1;
+    }
+
     public Vector2d getPlacement(){
         return this.placement;
     }
@@ -90,8 +92,10 @@ public class EvoAnimal {
     }
 
     public void positionChanged(Vector2d oldPosition){
-        for(IPositionChangeObserver o : this.observers){
-            o.positionChanged(oldPosition,this.placement);
+        if (!oldPosition.equals(this.placement)){
+            for(IPositionChangeObserver o : this.observers){
+                o.positionChanged(oldPosition,this.placement);
+            }
         }
     }
 

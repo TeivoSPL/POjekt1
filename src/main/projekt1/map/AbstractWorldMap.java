@@ -8,11 +8,11 @@ import java.util.*;
 
 public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver {
 
-    protected Map<Vector2d,EvoAnimal> animals;//lista zwierzat i hashcode nie wywolywac, klucz to Vector2d
-    protected LinkedList<EvoAnimal> animalOrder;
-    protected Vector2d upperRight;
-    protected Vector2d lowerLeft;
-    protected MapBoundary boundary;
+    private Map<Vector2d,EvoAnimal> animals;
+    private LinkedList<EvoAnimal> animalOrder;
+    private Vector2d upperRight;
+    private Vector2d lowerLeft;
+    private MapBoundary boundary;
 
     @Override
     public boolean canMoveTo(Vector2d position) {
@@ -56,10 +56,6 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
 
             if (!a.getPlacement().equals(pos)) {
                 a.positionChanged(pos);
-                boundary.xAxis.remove(a);   //nigdy nie wiadomo, kiedy brak aktualizacji wpłynie na wyznaczanie lowerL i upperR
-                boundary.xAxis.add(a);
-                boundary.yAxis.remove(a);
-                boundary.yAxis.add(a);
             }
 
         }
