@@ -44,11 +44,13 @@ public class EvoAnimal {
             this.orientation = this.orientation.next();
         }
 
+        Vector2d newPosition = this.orientation.toUnitVector().add(this.placement);
+        if(map.canMoveTo(newPosition)){
+            this.positionChanged(newPosition);
+            this.placement = newPosition;
+        }
 
-        Vector2d unitVec = this.orientation.toUnitVector();
-        this.placement = this.placement.add(unitVec);
-
-        this.energy -= 1;
+        this.live();
     }
 
     public void eat(){
@@ -75,11 +77,9 @@ public class EvoAnimal {
         this.observers.remove(observer);
     }
 
-    public void positionChanged(Vector2d oldPosition){
-        if (!oldPosition.equals(this.placement)){
-            for(IPositionChangeObserver o : this.observers){
-                o.positionChanged(oldPosition,this.placement);
-            }
+    public void positionChanged(Vector2d newPosition){
+        for(IPositionChangeObserver o : this.observers){
+            o.positionChanged(this.placement,newPosition);
         }
     }
 

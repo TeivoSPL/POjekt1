@@ -26,24 +26,39 @@ public class EvoMap extends AbstractWorldMap {
      */
     public void generatePlants(){
         //generate coordinates for plant in jungle
-        Vector2d jpos = new Vector2d(
-                (int)(Math.random()*10+((this.width-1)/2-1)),
-                (int)(Math.random()*10+((this.height)/2-1))
+        int safeCounter = 0;
+        Vector2d jpos;
+        do{
+            jpos = new Vector2d(
+                    (int)(Math.random()*10+((this.width-1)/2-1)),
+                    (int)(Math.random()*10+((this.height)/2-1))
+            );
+            safeCounter++;
+        }while(
+                this.grass.get(jpos)!=null &&
+                safeCounter<100
         );
-        Grass jg = new Grass(jpos);
-        grass.put(jpos,jg);
+        if(safeCounter!=100){
+            Grass jg = new Grass(jpos);
+            grass.put(jpos,jg);
+        }
 
         //generate coordinates for plant in steppe
+        safeCounter = 0;
         Vector2d spos;
         do {
             spos = new Vector2d((int)(Math.random()*100),(int)(Math.random()*30));
+            safeCounter++;
         }while(
                 spos.precedes(new Vector2d(54,19)) &&
                 spos.follows(new Vector2d(44,9)) &&
-                this.grass.get(spos) != null
+                this.grass.get(spos) != null &&
+                safeCounter < this.height*this.width-100
         );
-        Grass sg = new Grass(spos);
-        grass.put(jpos,sg);
+        if(safeCounter < this.height*this.width-100){
+            Grass sg = new Grass(spos);
+            grass.put(jpos,sg);
+        }
     }
 
     @Override
@@ -56,7 +71,6 @@ public class EvoMap extends AbstractWorldMap {
             //movement
             Vector2d pos = a.getPlacement();
             a.move();
-            a.positionChanged(pos);
 
         }
 
