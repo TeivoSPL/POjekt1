@@ -48,12 +48,13 @@ public class MapBoundary implements IPositionChangeObserver {
         return false;
     }
 
+    //tu potrzebuję pomocy
     @Override
     public void positionChanged(Vector2d oldPosition, Vector2d newPosition) {
-//        this.xAxis.remove(a);   //nigdy nie wiadomo, kiedy brak aktualizacji wpłynie na wyznaczanie lowerL i upperR
-//        this.xAxis.add(a);
-//        this.yAxis.remove(a);
-//        this.yAxis.add(a);
+//        this.xAxis.remove(oldPosition);
+//        this.addObject(AbstractWorldMap.objectAt(newPosition));
+//        this.yAxis.remove(oldPosition);
+//        this.yAxis.add(newPosition);
     }
 
 }

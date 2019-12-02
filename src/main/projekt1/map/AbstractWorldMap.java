@@ -53,10 +53,7 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
             EvoAnimal a = animalOrder.get(i%(animalOrder.size()));
             Vector2d pos = a.getPlacement();
             a.move(directions[i]);
-
-            if (!a.getPlacement().equals(pos)) {
-                a.positionChanged(pos);
-            }
+            a.positionChanged(pos);
 
         }
     }
@@ -77,7 +74,6 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
             EvoAnimal a = animals.get(oldPosition);
             animals.remove(oldPosition);
             animals.put(newPosition,a);
-
         }
     }
 }
