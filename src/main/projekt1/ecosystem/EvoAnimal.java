@@ -6,6 +6,7 @@ import main.projekt1.mechanics.MapDirection;
 import main.projekt1.mechanics.MoveDirection;
 import main.projekt1.mechanics.Vector2d;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -17,6 +18,7 @@ public class EvoAnimal {
     private IWorldMap map;
     private LinkedList<IPositionChangeObserver> observers;
     private int energy;
+    private ArrayList<Integer> genome;
 
     public EvoAnimal(IWorldMap map, Vector2d initialPosition){
         this.orientation = MapDirection.NORTH;
@@ -24,45 +26,26 @@ public class EvoAnimal {
         this.map = map;
         this.placement = initialPosition;
         this.energy = 10;
+        this.genome = new ArrayList<>();
+        for(int i=0;i<32;i++){
+            genome.add((int)(Math.random()*8));
+        }
+        this.genome.sort(Integer::compareTo);
     }
 
     @Override
     public String toString() {
-        switch (this.orientation) {
-            case NORTH:
-                return "N";
-            case SOUTH:
-                return "S";
-            case EAST:
-                return "E";
-            case WEST:
-                return "W";
-            default:
-                return null;
-        }
+        return "m";
     }
 
-    public void move(MoveDirection dir) {
-        Vector2d unitVec = orientation.toUnitVector();
-        Vector2d res = new Vector2d(0,0);
-        switch (dir) {
-            case FORWARD:
-                res = this.placement.add(unitVec);
-                break;
-            case BACKWARD:
-                res = this.placement.subtract(unitVec);
-                break;
-            case LEFT:
-                this.orientation = this.orientation.previous();
-                break;
-            case RIGHT:
-                this.orientation = this.orientation.next();
-                break;
+    public void move() {
+        int rotation = this.genome.get((int)(Math.random()*32));
+        for(int i=0;i<=rotation;i++){
+            this.orientation = this.orientation.next();
         }
 
-        if(dir == MoveDirection.FORWARD || dir == MoveDirection.BACKWARD && this.map!=null && map.canMoveTo(res)){
-            this.placement = res;
-        }
+        Vector2d unitVec = this.orientation.toUnitVector();
+        this.placement = this.placement.add(unitVec);
 
         this.energy -= 1;
     }
