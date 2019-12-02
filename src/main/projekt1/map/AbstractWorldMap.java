@@ -1,7 +1,6 @@
 package main.projekt1.map;
 import main.projekt1.ecosystem.EvoAnimal;
 import main.projekt1.mechanics.IPositionChangeObserver;
-import main.projekt1.mechanics.MoveDirection;
 import main.projekt1.mechanics.Vector2d;
 
 import java.util.*;

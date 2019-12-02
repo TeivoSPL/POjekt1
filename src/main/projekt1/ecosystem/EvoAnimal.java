@@ -3,13 +3,10 @@ package main.projekt1.ecosystem;
 import main.projekt1.map.IWorldMap;
 import main.projekt1.mechanics.IPositionChangeObserver;
 import main.projekt1.mechanics.MapDirection;
-import main.projekt1.mechanics.MoveDirection;
 import main.projekt1.mechanics.Vector2d;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
 public class EvoAnimal {
 
@@ -47,7 +44,7 @@ public class EvoAnimal {
         Vector2d newPosition = this.orientation.toUnitVector().add(this.placement);
         if(map.canMoveTo(newPosition)){
             this.positionChanged(newPosition);
-            this.placement = newPosition;
+            this.placement = newPosition; //czy to powinno być tutaj, czy lepiej w positionChanged?
         }
 
         this.live();
@@ -79,7 +76,7 @@ public class EvoAnimal {
 
     public void positionChanged(Vector2d newPosition){
         for(IPositionChangeObserver o : this.observers){
-            o.positionChanged(this.placement,newPosition);
+            o.positionChanged(this.placement,newPosition,this);
         }
     }
 

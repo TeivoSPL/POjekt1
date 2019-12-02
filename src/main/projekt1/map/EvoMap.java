@@ -2,11 +2,9 @@ package main.projekt1.map;
 
 import main.projekt1.ecosystem.EvoAnimal;
 import main.projekt1.ecosystem.Grass;
-import main.projekt1.mechanics.MoveDirection;
 import main.projekt1.mechanics.Vector2d;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 public class EvoMap extends AbstractWorldMap {
@@ -24,7 +22,7 @@ public class EvoMap extends AbstractWorldMap {
     /**
         This function generates two plants every time it is called.
      */
-    public void generatePlants(){
+    private void generatePlants(){
         //generate coordinates for plant in jungle
         int safeCounter = 0;
         Vector2d jpos;
@@ -69,16 +67,22 @@ public class EvoMap extends AbstractWorldMap {
         //life round
         for(EvoAnimal a : this.animals){
             //movement
-            Vector2d pos = a.getPlacement();
             a.move();
-
         }
 
+        //plant growth round
         this.generatePlants();
     }
 
     @Override
-    public void positionChanged(Vector2d oldPosition, Vector2d newPosition) {
+    public void positionChanged(Vector2d oldPosition, Vector2d newPosition, EvoAnimal animal) {
+        if(this.grass.get(newPosition)!=null){
+            this.grass.remove(newPosition);
+            animal.eat();
+        }
+    }
 
+    private void reproduce(EvoAnimal mother, EvoAnimal father){
+        //...
     }
 }
