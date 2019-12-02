@@ -44,6 +44,7 @@ public class EvoAnimal {
             this.orientation = this.orientation.next();
         }
 
+
         Vector2d unitVec = this.orientation.toUnitVector();
         this.placement = this.placement.add(unitVec);
 

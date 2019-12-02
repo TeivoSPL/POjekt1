@@ -1,9 +1,12 @@
 package main.projekt1.map;
 
+import main.projekt1.ecosystem.EvoAnimal;
 import main.projekt1.ecosystem.Grass;
+import main.projekt1.mechanics.MoveDirection;
 import main.projekt1.mechanics.Vector2d;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 public class EvoMap extends AbstractWorldMap {
@@ -37,10 +40,31 @@ public class EvoMap extends AbstractWorldMap {
         }while(
                 spos.precedes(new Vector2d(54,19)) &&
                 spos.follows(new Vector2d(44,9)) &&
-                this.objectAt(spos) instanceof Grass
+                this.grass.get(spos) != null
         );
         Grass sg = new Grass(spos);
         grass.put(jpos,sg);
     }
 
+    @Override
+    public void run() {
+        //death round
+        super.run();
+
+        //life round
+        for(EvoAnimal a : this.animals){
+            //movement
+            Vector2d pos = a.getPlacement();
+            a.move();
+            a.positionChanged(pos);
+
+        }
+
+        this.generatePlants();
+    }
+
+    @Override
+    public void positionChanged(Vector2d oldPosition, Vector2d newPosition) {
+
+    }
 }

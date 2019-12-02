@@ -8,22 +8,20 @@ import java.util.*;
 
 public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver {
 
-    private Map<Vector2d,EvoAnimal> animals;
-    private LinkedList<EvoAnimal> animalOrder;
-    private Vector2d upperRight;
-    private Vector2d lowerLeft;
-    private MapBoundary boundary;
+    protected LinkedList<EvoAnimal> animals;
+    protected Vector2d upperRight;
+    protected Vector2d lowerLeft;
+    protected MapBoundary boundary;
 
     @Override
     public boolean canMoveTo(Vector2d position) {
-        return !(objectAt(position) instanceof EvoAnimal);
+        return !(objectAt(position).size()>1);
     }
 
     @Override
     public boolean place(EvoAnimal animal) {
         if(canMoveTo(animal.getPlacement())){
-            this.animals.put(animal.getPlacement(),animal);
-            this.animalOrder.add(animal);
+            this.animals.add(animal);
             this.boundary.addObject(animal);
             animal.addObserver(this);
 
@@ -45,17 +43,18 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
         throw new IllegalArgumentException(animal.getPlacement().toString() + " Failed to place animal");
     }
 
-    @Override
-    public void run(MoveDirection[] directions) {
+    public void run() {
 
-        for(int i=0;i<directions.length;i++){
+        //death round
+        for(EvoAnimal a : animals){
 
-            EvoAnimal a = animalOrder.get(i%(animalOrder.size()));
-            Vector2d pos = a.getPlacement();
-            a.move(directions[i]);
-            a.positionChanged(pos);
+            if(a.getEnergy()<=0){
+                animals.remove(a.getPlacement());
+                animals.remove(a);
+            }
 
         }
+
     }
 
     @Override
@@ -64,17 +63,14 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     }
 
     @Override
-    public Object objectAt(Vector2d position) {
-        return this.animals.get(position);
-    }
-
-    @Override
-    public void positionChanged(Vector2d oldPosition, Vector2d newPosition) {
-        if(objectAt(oldPosition) instanceof EvoAnimal){
-            EvoAnimal a = animals.get(oldPosition);
-            animals.remove(oldPosition);
-            animals.put(newPosition,a);
+    public LinkedList<EvoAnimal> objectAt(Vector2d position) {
+        LinkedList<EvoAnimal> result = new LinkedList<>();
+        for(EvoAnimal a : this.animals){
+            if(a.getPlacement().equals(position)){
+                result.add(a);
+            }
         }
+        return result;
     }
 }
 
