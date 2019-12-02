@@ -44,7 +44,7 @@ public class EvoAnimal {
 
     public void move(MoveDirection dir) {
         Vector2d unitVec = orientation.toUnitVector();
-        Vector2d res = new Vector2d(0,0);            //inicjallizuję, żeby intellij nie krzyczał pod switchem, i tak res będzie zdefiniowane
+        Vector2d res = new Vector2d(0,0);
         switch (dir) {
             case FORWARD:
                 res = this.placement.add(unitVec);

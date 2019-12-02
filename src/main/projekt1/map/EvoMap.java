@@ -18,9 +18,15 @@ public class EvoMap extends AbstractWorldMap {
         this.grass = new HashMap<>();
     }
 
+    /**
+        This function generates two plants every time it is called.
+     */
     public void generatePlants(){
         //generate coordinates for plant in jungle
-        Vector2d jpos = new Vector2d((int)(Math.random()*10+44),(int)(Math.random()*10+9));
+        Vector2d jpos = new Vector2d(
+                (int)(Math.random()*10+((this.width-1)/2-1)),
+                (int)(Math.random()*10+((this.height)/2-1))
+        );
         Grass jg = new Grass(jpos);
         grass.put(jpos,jg);
 
@@ -28,7 +34,13 @@ public class EvoMap extends AbstractWorldMap {
         Vector2d spos;
         do {
             spos = new Vector2d((int)(Math.random()*100),(int)(Math.random()*30));
-        }while(spos.precedes(new Vector2d(54,19)) && spos.follows(new Vector2d(44,9)));
+        }while(
+                spos.precedes(new Vector2d(54,19)) &&
+                spos.follows(new Vector2d(44,9)) &&
+                this.objectAt(spos) instanceof Grass
+        );
+        Grass sg = new Grass(spos);
+        grass.put(jpos,sg);
     }
 
 }
