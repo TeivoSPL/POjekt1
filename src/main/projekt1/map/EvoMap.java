@@ -5,6 +5,8 @@ import main.projekt1.ecosystem.Grass;
 import main.projekt1.mechanics.Vector2d;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Map;
 
 public class EvoMap extends AbstractWorldMap {
@@ -24,6 +26,7 @@ public class EvoMap extends AbstractWorldMap {
      */
     private void generatePlants(){
         //generate coordinates for plant in jungle
+        //safecounter is crucial if there is not a lot of space to grow a new plant
         int safeCounter = 0;
         Vector2d jpos;
         do{
@@ -64,10 +67,37 @@ public class EvoMap extends AbstractWorldMap {
         //death round
         super.run();
 
-        //life round
+        //movement round
         for(EvoAnimal a : this.animals){
-            //movement
             a.move();
+        }
+
+        //eating round
+        for(EvoAnimal a : this.animals){
+            if(grass.get(a.getPlacement()) instanceof Grass){
+                LinkedList<EvoAnimal> contenders = objectAt(a.getPlacement());
+                EvoAnimal winner = a;
+                for(EvoAnimal c : contenders){
+                    if(c.getEnergy()>winner.getEnergy()){
+                        winner = c;
+                    }
+                }
+                winner.eat();
+                grass.remove((a.getPlacement()));
+            }
+        }
+
+        //reproducing round
+        for(EvoAnimal a : this.animals){
+            LinkedList<EvoAnimal> partners = objectAt(a.getPlacement());
+            if(partners.size()>1 && a.getEnergy()>5){ //dać zmienną na minimalną energię rozmnazania
+                //jakiś warunek na wybór partnera??
+                for(EvoAnimal partner : partners){
+                    if(!partner.equals(a) && partner.getEnergy()>5 && !isCrouded(a.getPlacement())){
+                        place(a.reproduce(partner));
+                    }
+                }
+            }
         }
 
         //plant growth round
@@ -82,7 +112,8 @@ public class EvoMap extends AbstractWorldMap {
         }
     }
 
-    private void reproduce(EvoAnimal mother, EvoAnimal father){
-        //...
+    private boolean isCrouded(Vector2d position) {
+        //tu warunek na brak miejsca wokol pozycji
+        return false;
     }
 }

@@ -48,7 +48,6 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
         for(EvoAnimal a : animals){
 
             if(a.getEnergy()<=0){
-                animals.remove(a.getPlacement());
                 animals.remove(a);
             }
 
@@ -61,7 +60,6 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
         return objectAt(position)!=null;
     }
 
-    @Override
     public LinkedList<EvoAnimal> objectAt(Vector2d position) {
         LinkedList<EvoAnimal> result = new LinkedList<>();
         for(EvoAnimal a : this.animals){

@@ -30,6 +30,14 @@ public class EvoAnimal {
         this.genome.sort(Integer::compareTo);
     }
 
+    public EvoAnimal(IWorldMap map, Vector2d initialPosition, ArrayList<Integer> genome, MapDirection orientation, int energy){
+        this(map, initialPosition);
+        this.genome = genome;
+        this.genome.sort(Integer::compareTo);
+        this.orientation = orientation;
+        this.energy = energy;
+    }
+
     @Override
     public String toString() {
         return "m";
@@ -37,14 +45,13 @@ public class EvoAnimal {
 
     public void move() {
         int rotation = this.genome.get((int)(Math.random()*32));
-        for(int i=0;i<=rotation;i++){
+        for(int i=0;i<rotation;i++){
             this.orientation = this.orientation.next();
         }
 
         Vector2d newPosition = this.orientation.toUnitVector().add(this.placement);
         if(map.canMoveTo(newPosition)){
             this.positionChanged(newPosition);
-            this.placement = newPosition; //czy to powinno być tutaj, czy lepiej w positionChanged?
         }
 
         this.live();
@@ -78,6 +85,32 @@ public class EvoAnimal {
         for(IPositionChangeObserver o : this.observers){
             o.positionChanged(this.placement,newPosition,this);
         }
+        this.placement = newPosition;
+    }
+
+    public EvoAnimal reproduce(EvoAnimal partner){
+        int energy=this.energy/4;   //sprawdzic to!!
+        energy += partner.energy/4;
+
+        this.energy -= energy-partner.energy/4;
+        partner.energy -= energy-this.energy/3;
+
+        ArrayList<Integer> genome = new ArrayList<>();
+        int firstStep = (int) (Math.random() * 6);
+        int secondStep = (int) (Math.random() * (8-firstStep))+firstStep+1;
+        for(int i=0;i<8;i++){
+            if(i<=firstStep){
+                genome.add(this.genome.get(i));
+            }
+            if(i>firstStep && i<=secondStep){
+                genome.add(partner.genome.get(i));
+            }
+            if(i>secondStep){
+                genome.add(this.genome.get(i));
+            }
+        }
+
+        return new EvoAnimal(this.map, this.placement, genome, this.orientation, energy);
     }
 
 }
