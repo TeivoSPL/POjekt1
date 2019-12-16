@@ -57,8 +57,8 @@ public class EvoAnimal {
         this.live();
     }
 
-    public void eat(){
-        this.energy+=3;
+    public void eat(int energyGain){
+        this.energy+=energyGain;
     }
 
     public int getEnergy() {

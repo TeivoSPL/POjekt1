@@ -46,7 +46,7 @@ public class EvoMap extends AbstractWorldMap {
 
         //generate coordinates for plant in steppe
         safeCounter = 0;
-        Vector2d spos;
+        Vector2d spos; // zmienic nazwe zmiennej
         do {
             spos = new Vector2d((int)(Math.random()*100),(int)(Math.random()*30));
             safeCounter++;
@@ -75,14 +75,17 @@ public class EvoMap extends AbstractWorldMap {
         //eating round
         for(EvoAnimal a : this.animals){
             if(grass.get(a.getPlacement()) instanceof Grass){
-                LinkedList<EvoAnimal> contenders = objectAt(a.getPlacement());
-                EvoAnimal winner = a;
-                for(EvoAnimal c : contenders){
-                    if(c.getEnergy()>winner.getEnergy()){
-                        winner = c;
+                LinkedList<EvoAnimal> contenders = getStrongest();
+
+                if(contenders.size()>1){
+                    for(EvoAnimal c : contenders){
+                        c.eat(5/contenders.size());
                     }
                 }
-                winner.eat();
+                else {
+                    contenders.get(0).eat(5);
+                }
+
                 grass.remove((a.getPlacement()));
             }
         }
@@ -93,7 +96,7 @@ public class EvoMap extends AbstractWorldMap {
             if(partners.size()>1 && a.getEnergy()>5){ //dać zmienną na minimalną energię rozmnazania
                 //jakiś warunek na wybór partnera??
                 for(EvoAnimal partner : partners){
-                    if(!partner.equals(a) && partner.getEnergy()>5 && !isCrouded(a.getPlacement())){
+                    if(!partner.equals(a) && partner.getEnergy()>5 && !isCrowded(a.getPlacement())){
                         place(a.reproduce(partner));
                     }
                 }
@@ -108,12 +111,30 @@ public class EvoMap extends AbstractWorldMap {
     public void positionChanged(Vector2d oldPosition, Vector2d newPosition, EvoAnimal animal) {
         if(this.grass.get(newPosition)!=null){
             this.grass.remove(newPosition);
-            animal.eat();
+            animal.eat(5);
         }
     }
 
-    private boolean isCrouded(Vector2d position) {
-        //tu warunek na brak miejsca wokol pozycji
-        return false;
+    private LinkedList<EvoAnimal> getFreeSpaces(Vector2d position) {
+        
+    }
+
+    private LinkedList<EvoAnimal> getStrongest(Vector2d position){
+        LinkedList<EvoAnimal> result = new LinkedList<>();
+        int maxEnergy = 0;
+
+        for(EvoAnimal a : animals){
+            if(a.getPlacement().equals(position) && a.getEnergy()>maxEnergy){
+                maxEnergy=a.getEnergy();
+            }
+        }
+
+        for(EvoAnimal a : animals){
+            if(a.getPlacement().equals(position) && a.getEnergy() == maxEnergy){
+                result.add(a);
+            }
+        }
+
+        return result;
     }
 }

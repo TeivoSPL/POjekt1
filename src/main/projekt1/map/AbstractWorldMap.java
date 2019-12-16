@@ -8,9 +8,10 @@ import java.util.*;
 public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver {
 
     protected LinkedList<EvoAnimal> animals;
-    protected Vector2d upperRight;
-    protected Vector2d lowerLeft;
-    protected MapBoundary boundary;
+    protected Vector2d upperRight; //redundant
+    protected Vector2d lowerLeft;  //redundant
+    protected MapBoundary boundary;//redundant
+    // użycie treesetu na energiach? Problem
 
     @Override
     public boolean canMoveTo(Vector2d position) {
