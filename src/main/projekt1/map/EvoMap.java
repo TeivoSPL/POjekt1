@@ -96,7 +96,7 @@ public class EvoMap extends AbstractWorldMap {
             if(partners.size()>1 && a.getEnergy()>5){ //dać zmienną na minimalną energię rozmnazania
                 //jakiś warunek na wybór partnera??
                 for(EvoAnimal partner : partners){
-                    if(!partner.equals(a) && partner.getEnergy()>5 && !isCrowded(a.getPlacement())){
+                    if(!partner.equals(a) && partner.getEnergy()>5 && getFreeSpaces()){
                         place(a.reproduce(partner));
                     }
                 }
@@ -115,8 +115,20 @@ public class EvoMap extends AbstractWorldMap {
         }
     }
 
-    private LinkedList<EvoAnimal> getFreeSpaces(Vector2d position) {
-        
+    private LinkedList<Vector2d> getFreeSpaces(Vector2d position) {
+        LinkedList<Vector2d> result = new LinkedList<>();
+        int x = position.getX();
+        int y = position.getY();
+
+        for(int i = -1; i<2; i++){
+            for(int j = -1; j<2; j++){
+                if(objectAt(new Vector2d(x+i,y+j)).size()==0){
+                    result.add(new Vector2d(x+i,y+j));
+                }
+            }
+        }
+
+        return result;
     }
 
     private LinkedList<EvoAnimal> getStrongest(Vector2d position){

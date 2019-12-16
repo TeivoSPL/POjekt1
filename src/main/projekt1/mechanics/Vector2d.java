@@ -1,8 +1,8 @@
 package main.projekt1.mechanics;
 
 public class Vector2d {
-    public final int x;
-    public final int y;
+    private final int x;
+    private final int y;
 
     public Vector2d(int x, int y){
         this.x = x;
@@ -83,5 +83,13 @@ public class Vector2d {
         hash += this.x*31;
         hash += this.y*17;
         return hash;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 }
