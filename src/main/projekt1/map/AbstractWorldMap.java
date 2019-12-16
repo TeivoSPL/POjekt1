@@ -7,11 +7,10 @@ import java.util.*;
 
 public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver {
 
-    protected LinkedList<EvoAnimal> animals;
+    protected HashMap<Vector2d,LinkedList<EvoAnimal>> animals;
     protected Vector2d upperRight; //redundant
     protected Vector2d lowerLeft;  //redundant
     protected MapBoundary boundary;//redundant
-    // użycie treesetu na energiach? Problem
 
     @Override
     public boolean canMoveTo(Vector2d position) {
@@ -21,7 +20,8 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     @Override
     public boolean place(EvoAnimal animal) {
         if(canMoveTo(animal.getPlacement())){
-            this.animals.add(animal);
+            this.animals.get(animal.getPlacement()).add(animal);
+            this.animals.get(animal.getPlacement()).sort(Comparator.comparing(EvoAnimal::getEnergy));
             this.boundary.addObject(animal);
             animal.addObserver(this);
 
@@ -46,10 +46,13 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     public void run() {
 
         //death round
-        for(EvoAnimal a : animals){
+        for(LinkedList<EvoAnimal> animalsOnPosition: animals.values()){
 
-            if(a.getEnergy()<=0){
-                animals.remove(a);
+            for(EvoAnimal a : animalsOnPosition)
+            {
+                if(a.getEnergy()<=0){
+                    animals.remove(a);
+                }
             }
 
         }
@@ -62,13 +65,7 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     }
 
     public LinkedList<EvoAnimal> objectAt(Vector2d position) {
-        LinkedList<EvoAnimal> result = new LinkedList<>();
-        for(EvoAnimal a : this.animals){
-            if(a.getPlacement().equals(position)){
-                result.add(a);
-            }
-        }
-        return result;
+        return this.animals.get(position);
     }
 }
 

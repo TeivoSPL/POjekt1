@@ -4,8 +4,8 @@ import main.projekt1.ecosystem.EvoAnimal;
 import main.projekt1.ecosystem.Grass;
 import main.projekt1.mechanics.Vector2d;
 
+import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
 
@@ -68,14 +68,17 @@ public class EvoMap extends AbstractWorldMap {
         super.run();
 
         //movement round
-        for(EvoAnimal a : this.animals){
-            a.move();
+        for(LinkedList<EvoAnimal> animalsOnPosition : this.animals.values()){
+            for(EvoAnimal a : animalsOnPosition){
+                a.move();
+            }
         }
 
         //eating round
-        for(EvoAnimal a : this.animals){
-            if(grass.get(a.getPlacement()) instanceof Grass){
-                LinkedList<EvoAnimal> contenders = getStrongest();
+        for(Vector2d position : this.animals.keySet()){
+            if(grass.get(position)!=null){
+
+                LinkedList<EvoAnimal> contenders = this.getStrongest(position);
 
                 if(contenders.size()>1){
                     for(EvoAnimal c : contenders){
@@ -86,21 +89,36 @@ public class EvoMap extends AbstractWorldMap {
                     contenders.get(0).eat(5);
                 }
 
-                grass.remove((a.getPlacement()));
+                grass.remove((position));
             }
         }
 
         //reproducing round
-        for(EvoAnimal a : this.animals){
-            LinkedList<EvoAnimal> partners = objectAt(a.getPlacement());
-            if(partners.size()>1 && a.getEnergy()>5){ //dać zmienną na minimalną energię rozmnazania
-                //jakiś warunek na wybór partnera??
-                for(EvoAnimal partner : partners){
-                    if(!partner.equals(a) && partner.getEnergy()>5 && getFreeSpaces()){
-                        place(a.reproduce(partner));
-                    }
+        for(Vector2d position : this.animals.keySet()){
+
+            if(this.animals.get(position).size()>1){
+
+                LinkedList<EvoAnimal> partners = getStrongest(position);
+
+                if(partners.size()>1 && partners.get(0).getEnergy()>5){ //dać zmienną na minimalną energię rozmnazania
+
+                    int fatherIndex,motherIndex;
+
+                    do{
+                        fatherIndex = (int)(Math.random()*partners.size());
+                        motherIndex = (int)(Math.random()*partners.size());
+                    }while(fatherIndex == motherIndex);
+
+                    this.place(partners.get(fatherIndex).reproduce(partners.get(motherIndex)));
+                }
+                else{
+
+                    LinkedList<EvoAnimal> animalsAtPosition = this.animals.get(position);
+                    int secondHighestEnergy = animalsAtPosition.get(animalsAtPosition.size()-2).getEnergy();
+                    int 
                 }
             }
+
         }
 
         //plant growth round
@@ -133,17 +151,14 @@ public class EvoMap extends AbstractWorldMap {
 
     private LinkedList<EvoAnimal> getStrongest(Vector2d position){
         LinkedList<EvoAnimal> result = new LinkedList<>();
-        int maxEnergy = 0;
+        int maxEnergy = this.animals.get(position).getLast().getEnergy();
 
-        for(EvoAnimal a : animals){
-            if(a.getPlacement().equals(position) && a.getEnergy()>maxEnergy){
-                maxEnergy=a.getEnergy();
-            }
-        }
-
-        for(EvoAnimal a : animals){
-            if(a.getPlacement().equals(position) && a.getEnergy() == maxEnergy){
+        for(EvoAnimal a : this.animals.get(position)){
+            if(a.getEnergy() == maxEnergy){
                 result.add(a);
+            }
+            else{
+                break;
             }
         }
 
