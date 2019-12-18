@@ -11,19 +11,20 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
 
     @Override
     public boolean canMoveTo(Vector2d position) {
-        return !(objectAt(position).size()>1);
+        return true;
     }
 
     @Override
     public boolean place(EvoAnimal animal) {
-        if(canMoveTo(animal.getPlacement())){
-            this.animals.get(animal.getPlacement()).add(animal);
-            this.animals.get(animal.getPlacement()).sort(Comparator.comparing(EvoAnimal::getEnergy));
-            animal.addObserver(this);
-
-            return true;
+        if(!this.animals.containsKey(animal.getPlacement())){
+            this.animals.put(animal.getPlacement(),new LinkedList<EvoAnimal>());
         }
-        throw new IllegalArgumentException(animal.getPlacement().toString() + " Failed to place animal");
+
+        this.animals.get(animal.getPlacement()).add(animal);
+        this.animals.get(animal.getPlacement()).sort(Comparator.comparing(EvoAnimal::getEnergy));
+        animal.addObserver(this);
+
+        return true;
     }
 
     public void run() {
@@ -34,7 +35,12 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
             for(EvoAnimal a : animalsOnPosition)
             {
                 if(a.getEnergy()<=0){
-                    animals.remove(a);
+                    if(this.animals.get(a.getPlacement()).size()==1){
+                        this.animals.remove(a.getPlacement());
+                    }
+                    else{
+                        this.animals.get(a.getPlacement()).remove(a);
+                    }
                 }
             }
 

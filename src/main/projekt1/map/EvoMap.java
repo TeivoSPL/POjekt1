@@ -16,6 +16,7 @@ public class EvoMap extends AbstractWorldMap {
         this.width = 100;
         this.height = 30;
         this.grass = new HashMap<>();
+        this.animals = new HashMap<>();
     }
 
     /**
@@ -133,10 +134,17 @@ public class EvoMap extends AbstractWorldMap {
 
     @Override
     public void positionChanged(Vector2d oldPosition, Vector2d newPosition, EvoAnimal animal) {
-        if(this.grass.get(newPosition)!=null){
-            this.grass.remove(newPosition);
-            animal.eat(5);
+        this.animals.get(oldPosition).remove(animal);
+
+        if(this.animals.get(oldPosition).size()==0){
+            this.animals.remove(oldPosition);
         }
+
+        if(!this.animals.containsKey(newPosition)){
+            this.animals.put(newPosition,new LinkedList<>());
+        }
+
+        this.animals.get(newPosition).add(animal);
     }
 
     public LinkedHashSet<Vector2d> getFreeSpaces(Vector2d position) {
@@ -146,7 +154,7 @@ public class EvoMap extends AbstractWorldMap {
 
         for(int i = -1; i<2; i++){
             for(int j = -1; j<2; j++){
-                if(objectAt(new Vector2d(x+i,y+j)).size()==0){
+                if(objectAt(new Vector2d(x+i,y+j))==null){
                     result.add(new Vector2d(x+i,y+j));
                 }
             }

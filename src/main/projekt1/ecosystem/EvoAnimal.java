@@ -121,7 +121,7 @@ public class EvoAnimal {
 
     public void positionChanged(Vector2d newPosition){
         for(IPositionChangeObserver o : this.observers){
-            o.positionChanged(this.placement,newPosition,this);
+            o.positionChanged(this.placement,newPosition, this);
         }
         this.placement = newPosition;
     }
