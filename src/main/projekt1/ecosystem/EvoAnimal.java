@@ -22,6 +22,7 @@ public class EvoAnimal {
     public EvoAnimal(EvoMap map, Vector2d initialPosition){
         this.orientation = MapDirection.NORTH;
         this.observers = new LinkedList<>();
+        this.observers.add(map);
         this.map = map;
         this.placement = initialPosition;
         this.energy = 10;
@@ -45,6 +46,38 @@ public class EvoAnimal {
         return "m";
     }
 
+    public EvoAnimal reproduce(EvoAnimal partner){
+        if(this.placement.equals(partner.getPlacement())){
+
+            int energy=this.energy/4;   //sprawdzic to!!
+            energy += partner.energy/4;
+
+            this.energy -= energy-partner.energy/4;
+            partner.energy -= energy-this.energy/3;
+
+            ArrayList<Integer> genome = new ArrayList<>();
+            int firstStep = (int) (Math.random() * 30);
+            int secondStep = (int) (Math.random() * (32-firstStep))+firstStep+1;
+            for(int i=0;i<32;i++){
+                if(i<=firstStep){
+                    genome.add(this.genome.get(i));
+                }
+                if(i>firstStep && i<=secondStep){
+                    genome.add(partner.genome.get(i));
+                }
+                if(i>secondStep){
+                    genome.add(this.genome.get(i));
+                }
+            }
+
+            Object[] possiblePlacements = this.map.getFreeSpaces(this.placement).toArray();
+            Vector2d newPlacement = (Vector2d)possiblePlacements[(int)(Math.random()*possiblePlacements.length)];
+
+            return new EvoAnimal(this.map, newPlacement, genome, this.orientation, energy);
+        }
+        return null;
+    }
+
     public void move() {
         int rotation = this.genome.get((int)(Math.random()*32));
         for(int i=0;i<rotation;i++){
@@ -66,12 +99,12 @@ public class EvoAnimal {
         this.energy+=energyGain;
     }
 
-    public int getEnergy() {
-        return energy;
-    }
-
     public void live() {
         this.energy -= 1;
+    }
+
+    public int getEnergy() {
+        return energy;
     }
 
     public Vector2d getPlacement(){
@@ -91,34 +124,6 @@ public class EvoAnimal {
             o.positionChanged(this.placement,newPosition,this);
         }
         this.placement = newPosition;
-    }
-
-    public EvoAnimal reproduce(EvoAnimal partner){
-        int energy=this.energy/4;   //sprawdzic to!!
-        energy += partner.energy/4;
-
-        this.energy -= energy-partner.energy/4;
-        partner.energy -= energy-this.energy/3;
-
-        ArrayList<Integer> genome = new ArrayList<>();
-        int firstStep = (int) (Math.random() * 6);
-        int secondStep = (int) (Math.random() * (8-firstStep))+firstStep+1;
-        for(int i=0;i<8;i++){
-            if(i<=firstStep){
-                genome.add(this.genome.get(i));
-            }
-            if(i>firstStep && i<=secondStep){
-                genome.add(partner.genome.get(i));
-            }
-            if(i>secondStep){
-                genome.add(this.genome.get(i));
-            }
-        }
-
-        Object[] possiblePlacements = this.map.getFreeSpaces(this.placement).toArray();
-        Vector2d newPlacement = (Vector2d)possiblePlacements[(int)(Math.random()*possiblePlacements.length)];
-
-        return new EvoAnimal(this.map, newPlacement, genome, this.orientation, energy);
     }
 
 }
