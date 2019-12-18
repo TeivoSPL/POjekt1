@@ -10,21 +10,15 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     protected HashMap<Vector2d,LinkedList<EvoAnimal>> animals;
 
     @Override
-    public boolean canMoveTo(Vector2d position) {
-        return true;
-    }
-
-    @Override
-    public boolean place(EvoAnimal animal) {
+    public void place(EvoAnimal animal) {//zmienic na void
         if(!this.animals.containsKey(animal.getPlacement())){
-            this.animals.put(animal.getPlacement(),new LinkedList<EvoAnimal>());
+            this.animals.put(animal.getPlacement(),new LinkedList<>());
         }
 
         this.animals.get(animal.getPlacement()).add(animal);
         this.animals.get(animal.getPlacement()).sort(Comparator.comparing(EvoAnimal::getEnergy));
         animal.addObserver(this);
 
-        return true;
     }
 
     public void run() {

@@ -91,6 +91,7 @@ public class EvoAnimal {
         );
 
         this.positionChanged(newPosition);
+        this.placement = newPosition;
 
         this.live();
     }
@@ -123,7 +124,6 @@ public class EvoAnimal {
         for(IPositionChangeObserver o : this.observers){
             o.positionChanged(this.placement,newPosition, this);
         }
-        this.placement = newPosition;
     }
 
 }

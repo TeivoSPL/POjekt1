@@ -11,23 +11,14 @@ import main.projekt1.mechanics.Vector2d;
  *
  */
 public interface IWorldMap {
-    /**
-     * Indicate if any object can move to the given position.
-     *
-     * @param position
-     *            The position checked for the movement possibility.
-     * @return True if the object can move to that position.
-     */
-    boolean canMoveTo(Vector2d position);
 
     /**
      * Place a animal on the map.
      *
      * @param animal
      *            The animal to place on the map.
-     * @return True if the animal was placed. The animal cannot be placed if the map is already occupied.
      */
-    boolean place(EvoAnimal animal);
+    void place(EvoAnimal animal);
 
     /**
      * Move the animal on the map.

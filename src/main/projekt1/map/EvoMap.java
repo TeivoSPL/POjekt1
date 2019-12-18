@@ -145,6 +145,7 @@ public class EvoMap extends AbstractWorldMap {
         }
 
         this.animals.get(newPosition).add(animal);
+        this.animals.get(newPosition).sort(Comparator.comparing(EvoAnimal::getEnergy));
     }
 
     public LinkedHashSet<Vector2d> getFreeSpaces(Vector2d position) {

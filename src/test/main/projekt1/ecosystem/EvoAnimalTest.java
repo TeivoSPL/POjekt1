@@ -43,9 +43,10 @@ public class EvoAnimalTest {
         animal3.move();
         animal4.move();
 
-        assertNull(map.objectAt(new Vector2d(2,2)));
-        assertNull(map.objectAt(new Vector2d(0,0)));
-        assertNull(map.objectAt(new Vector2d(0,29)));
+        assertNotEquals("Position should be other than 2,2!",new Vector2d(2,2),animal1.getPlacement());
+        assertNotEquals("Position should be other than 2,2!",new Vector2d(2,2),animal2.getPlacement());
+        assertNotEquals("Position should be other than 2,2!",new Vector2d(0,0),animal3.getPlacement());
+        assertNotEquals("Position should be other than 2,2!",new Vector2d(0,29),animal4.getPlacement());
 
     }
 }
