@@ -1,23 +1,25 @@
 package main.projekt1.ecosystem;
 
+import main.projekt1.map.EvoMap;
 import main.projekt1.map.IWorldMap;
 import main.projekt1.mechanics.IPositionChangeObserver;
 import main.projekt1.mechanics.MapDirection;
 import main.projekt1.mechanics.Vector2d;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
 public class EvoAnimal {
 
     private MapDirection orientation;
     private Vector2d placement;
-    private IWorldMap map;
+    private EvoMap map;
     private LinkedList<IPositionChangeObserver> observers;
     private int energy;
     private ArrayList<Integer> genome;
 
-    public EvoAnimal(IWorldMap map, Vector2d initialPosition){
+    public EvoAnimal(EvoMap map, Vector2d initialPosition){
         this.orientation = MapDirection.NORTH;
         this.observers = new LinkedList<>();
         this.map = map;
@@ -30,7 +32,7 @@ public class EvoAnimal {
         this.genome.sort(Integer::compareTo);
     }
 
-    public EvoAnimal(IWorldMap map, Vector2d initialPosition, ArrayList<Integer> genome, MapDirection orientation, int energy){
+    public EvoAnimal(EvoMap map, Vector2d initialPosition, ArrayList<Integer> genome, MapDirection orientation, int energy){
         this(map, initialPosition);
         this.genome = genome;
         this.genome.sort(Integer::compareTo);
@@ -50,9 +52,12 @@ public class EvoAnimal {
         }
 
         Vector2d newPosition = this.orientation.toUnitVector().add(this.placement);
-        if(map.canMoveTo(newPosition)){
-            this.positionChanged(newPosition);
-        }
+        newPosition = new Vector2d(
+                newPosition.getX()%this.map.getWidth(),
+                newPosition.getY()%this.map.getHeight()
+        );
+
+        this.positionChanged(newPosition);
 
         this.live();
     }
@@ -110,7 +115,10 @@ public class EvoAnimal {
             }
         }
 
-        return new EvoAnimal(this.map, this.placement, genome, this.orientation, energy);
+        Object[] possiblePlacements = this.map.getFreeSpaces(this.placement).toArray();
+        Vector2d newPlacement = (Vector2d)possiblePlacements[(int)(Math.random()*possiblePlacements.length)];
+
+        return new EvoAnimal(this.map, newPlacement, genome, this.orientation, energy);
     }
 
 }

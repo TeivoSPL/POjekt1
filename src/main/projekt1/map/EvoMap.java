@@ -4,10 +4,7 @@ import main.projekt1.ecosystem.EvoAnimal;
 import main.projekt1.ecosystem.Grass;
 import main.projekt1.mechanics.Vector2d;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 
 public class EvoMap extends AbstractWorldMap {
 
@@ -68,61 +65,70 @@ public class EvoMap extends AbstractWorldMap {
         super.run();
 
         //movement round
-        for(LinkedList<EvoAnimal> animalsOnPosition : this.animals.values()){
-            for(EvoAnimal a : animalsOnPosition){
+        for (LinkedList<EvoAnimal> animalsOnPosition : this.animals.values()) {
+            for (EvoAnimal a : animalsOnPosition) {
                 a.move();
             }
         }
+    }
 
+    public void eat() {
         //eating round
-        for(Vector2d position : this.animals.keySet()){
-            if(grass.get(position)!=null){
+        for (Vector2d position : this.animals.keySet()) {
+            if (grass.get(position) != null) {
 
                 LinkedList<EvoAnimal> contenders = this.getStrongest(position);
 
-                if(contenders.size()>1){
-                    for(EvoAnimal c : contenders){
-                        c.eat(5/contenders.size());
+                if (contenders.size() > 1) {
+                    for (EvoAnimal c : contenders) {
+                        c.eat(5 / contenders.size());
                     }
-                }
-                else {
+                } else {
                     contenders.get(0).eat(5);
                 }
 
                 grass.remove((position));
             }
         }
+    }
 
+    public void reproduce() {
         //reproducing round
-        for(Vector2d position : this.animals.keySet()){
+        for (Vector2d position : this.animals.keySet()) {
 
-            if(this.animals.get(position).size()>1){
+            if (this.animals.get(position).size() > 1) {
 
                 LinkedList<EvoAnimal> partners = getStrongest(position);
 
-                if(partners.size()>1 && partners.get(0).getEnergy()>5){ //dać zmienną na minimalną energię rozmnazania
+                if (partners.size() > 1 && partners.get(0).getEnergy() > 5) { //dać zmienną na minimalną energię rozmnazania
 
-                    int fatherIndex,motherIndex;
+                    int fatherIndex, motherIndex;
 
-                    do{
-                        fatherIndex = (int)(Math.random()*partners.size());
-                        motherIndex = (int)(Math.random()*partners.size());
-                    }while(fatherIndex == motherIndex);
+                    do {
+                        fatherIndex = (int) (Math.random() * partners.size());
+                        motherIndex = (int) (Math.random() * partners.size());
+                    } while (fatherIndex == motherIndex);
 
                     this.place(partners.get(fatherIndex).reproduce(partners.get(motherIndex)));
-                }
-                else{
+                } else {
 
                     LinkedList<EvoAnimal> animalsAtPosition = this.animals.get(position);
-                    int secondHighestEnergy = animalsAtPosition.get(animalsAtPosition.size()-2).getEnergy();
-                    int 
+                    int secondHighestEnergy = animalsAtPosition.get(animalsAtPosition.size() - 2).getEnergy();
+                    int counter = 0;
+                    for (int i = animalsAtPosition.size() - 2; i > 0; i--) {
+                        if (animalsAtPosition.get(i).getEnergy() < secondHighestEnergy) {
+                            break;
+                        } else {
+                            counter++;
+                        }
+                    }
+
+                    int motherIndex = (int) (Math.random() * counter) + 2;
+                    partners.get(0).reproduce(animalsAtPosition.get(animalsAtPosition.size() - motherIndex));
                 }
             }
 
         }
-
-        //plant growth round
-        this.generatePlants();
     }
 
     @Override
@@ -133,8 +139,8 @@ public class EvoMap extends AbstractWorldMap {
         }
     }
 
-    private LinkedList<Vector2d> getFreeSpaces(Vector2d position) {
-        LinkedList<Vector2d> result = new LinkedList<>();
+    public LinkedHashSet<Vector2d> getFreeSpaces(Vector2d position) {
+        LinkedHashSet<Vector2d> result = new LinkedHashSet<>();
         int x = position.getX();
         int y = position.getY();
 
@@ -163,5 +169,13 @@ public class EvoMap extends AbstractWorldMap {
         }
 
         return result;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
     }
 }
