@@ -66,7 +66,8 @@ public class EvoMap extends AbstractWorldMap {
         super.run();
 
         //movement round
-        for (LinkedList<EvoAnimal> animalsOnPosition : this.animals.values()) {
+        Collection<LinkedList<EvoAnimal>> currentPositions = this.animals.values();
+        for (LinkedList<EvoAnimal> animalsOnPosition : currentPositions) {//tutaj! concurrent modification
             for (EvoAnimal a : animalsOnPosition) {
                 a.move();
             }
@@ -130,22 +131,6 @@ public class EvoMap extends AbstractWorldMap {
             }
 
         }
-    }
-
-    @Override
-    public void positionChanged(Vector2d oldPosition, Vector2d newPosition, EvoAnimal animal) {
-        this.animals.get(oldPosition).remove(animal);
-
-        if(this.animals.get(oldPosition).size()==0){
-            this.animals.remove(oldPosition);
-        }
-
-        if(!this.animals.containsKey(newPosition)){
-            this.animals.put(newPosition,new LinkedList<>());
-        }
-
-        this.animals.get(newPosition).add(animal);
-        this.animals.get(newPosition).sort(Comparator.comparing(EvoAnimal::getEnergy));
     }
 
     public LinkedHashSet<Vector2d> getFreeSpaces(Vector2d position) {

@@ -23,16 +23,15 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     public void run() {
 
         //death round
-        for(LinkedList<EvoAnimal> animalsOnPosition: animals.values()){
+        for(LinkedList<EvoAnimal> animalsOnPosition: this.animals.values()){
 
             for(EvoAnimal a : animalsOnPosition)
             {
                 if(a.getEnergy()<=0){
-                    if(this.animals.get(a.getPlacement()).size()==1){
+                    this.animals.get(a.getPlacement()).remove(a);
+
+                    if(this.animals.get(a.getPlacement()).size()==0){
                         this.animals.remove(a.getPlacement());
-                    }
-                    else{
-                        this.animals.get(a.getPlacement()).remove(a);
                     }
                 }
             }
@@ -48,6 +47,21 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
 
     public LinkedList<EvoAnimal> objectAt(Vector2d position) {
         return this.animals.get(position);
+    }
+
+    public void positionChanged(Vector2d oldPosition, Vector2d newPosition, EvoAnimal animal) {
+        this.animals.get(oldPosition).remove(animal);
+
+        if(this.animals.get(oldPosition).size()==0){
+            this.animals.remove(oldPosition);
+        }
+
+        if(!this.animals.containsKey(newPosition)){
+            this.animals.put(newPosition,new LinkedList<>());
+        }
+
+        this.animals.get(newPosition).add(animal);
+        this.animals.get(newPosition).sort(Comparator.comparing(EvoAnimal::getEnergy));
     }
 }
 

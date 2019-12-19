@@ -29,7 +29,7 @@ public class AbstractWorldMapTest {
     }
 
     @Test
-    public void run() {
+    public void isOccupied() {
         EvoMap map = new EvoMap();
 
         EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2));
@@ -37,21 +37,38 @@ public class AbstractWorldMapTest {
         EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0));
 
         map.place(animal1);
+        map.place(animal1);
         map.place(animal2);
         map.place(animal3);
 
-        map.run();
+        assertTrue(map.isOccupied(new Vector2d(2,2)));
+        assertTrue(map.isOccupied(new Vector2d(2,23)));
+        assertTrue(map.isOccupied(new Vector2d(0,0)));
 
-        assertNull(map.objectAt(new Vector2d(2,2)));
-        assertNull(map.objectAt(new Vector2d(2,23)));
-        assertNull(map.objectAt(new Vector2d(0,0)));
-    }
-
-    @Test
-    public void isOccupied() {
+        assertFalse(map.isOccupied(new Vector2d(0,1)));
+        assertFalse(map.isOccupied(new Vector2d(1,0)));
     }
 
     @Test
     public void objectAt() {
+        EvoMap map = new EvoMap();
+
+        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2));
+        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(2,23));
+        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0));
+
+        map.place(animal1);
+        map.place(animal1);
+        map.place(animal2);
+        map.place(animal3);
+
+        assertNotNull(map.objectAt(new Vector2d(2,2)));
+        assertNotNull(map.objectAt(new Vector2d(2,23)));
+        assertNotNull(map.objectAt(new Vector2d(0,0)));
+
+        assertNull(map.objectAt(new Vector2d(0,1)));
+        assertNull(map.objectAt(new Vector2d(1,0)));
     }
+
+
 }

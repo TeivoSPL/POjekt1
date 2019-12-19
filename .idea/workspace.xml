@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93956ae2-32b4-4475-a220-13645763fcf3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/main/projekt1/map/EvoMapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,24 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3263#3264#0" expanded="true" />
-                <element signature="e#3295#3296#0" expanded="true" />
-                <element signature="e#3325#3326#0" expanded="true" />
-                <element signature="e#3354#3355#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+            <state relative-caret-position="110">
+              <caret line="120" column="14" selection-start-line="120" selection-start-column="14" selection-end-line="120" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,45 +36,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/MapVisualizer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1024">
-              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-              <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
-              <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
-              <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
-              <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
-              <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
+            <state relative-caret-position="128">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java">
+        <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/EvoMapTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="147" column="85" selection-start-line="147" selection-start-column="85" selection-end-line="147" selection-end-column="85" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5427#5428#0" expanded="true" />
-                <element signature="e#5456#5457#0" expanded="true" />
-                <element signature="e#5485#5486#0" expanded="true" />
-                <element signature="e#5513#5514#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1396#1397#0" expanded="true" />
-                <element signature="e#1509#1510#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-38">
+              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -96,19 +59,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
+            <state relative-caret-position="74">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/IWorldMap.java">
+        <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state relative-caret-position="275">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1303#1304#0" expanded="true" />
+                <element signature="e#1350#1351#0" expanded="true" />
+                <element signature="e#1414#1415#0" expanded="true" />
+                <element signature="e#1463#1464#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,11 +122,12 @@
         <option value="$PROJECT_DIR$/test/main/projekt1/ecosystem/EvoAnimalTest.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/mechanics/IPositionChangeObserver.java" />
         <option value="$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java" />
-        <option value="$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/map/IWorldMap.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java" />
+        <option value="$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java" />
         <option value="$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java" />
+        <option value="$PROJECT_DIR$/src/test/main/projekt1/map/EvoMapTest.java" />
       </list>
     </option>
   </component>
@@ -173,11 +141,10 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,32 +163,123 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="projekt1" type="462c0819:PsiDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Tests'; set:Tests; class com.intellij.psi.search.scope.TestsScope">
+          <expand>
             <path>
-              <item name="POjekt1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="POjekt1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="projekt1" type="462c0819:PsiDirectoryNode" />
-              <item name="ecosystem" type="462c0819:PsiDirectoryNode" />
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
             </path>
             <path>
-              <item name="POjekt1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="POjekt1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="projekt1" type="462c0819:PsiDirectoryNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="POjekt1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="POjekt1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="projekt1" type="462c0819:PsiDirectoryNode" />
-              <item name="mechanics" type="462c0819:PsiDirectoryNode" />
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="projekt1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="projekt1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ecosystem" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="projekt1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="map" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="projekt1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="mechanics" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="projekt1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="projekt1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ecosystem" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="POjekt1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="POjekt1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="projekt1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="map" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,13 +295,13 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/test" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Programowanie obiektowe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -267,7 +325,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AbstractWorldMapTest.run">
+  <component name="RunManager" selected="JUnit.EvoMapTest.getFreeSpaces">
+    <configuration name="AbstractWorldMapTest.isOccupied" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="POjekt1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.projekt1.map.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.projekt1.map" />
+      <option name="MAIN_CLASS_NAME" value="main.projekt1.map.AbstractWorldMapTest" />
+      <option name="METHOD_NAME" value="isOccupied" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AbstractWorldMapTest.place" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="POjekt1" />
       <extension name="coverage">
@@ -300,48 +374,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EvoAnimalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EvoMapTest.getFreeSpaces" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="POjekt1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.projekt1.ecosystem.*" />
+          <option name="PATTERN" value="main.projekt1.map.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="main.projekt1.ecosystem" />
-      <option name="MAIN_CLASS_NAME" value="main.projekt1.ecosystem.EvoAnimalTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EvoAnimalTest.move" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="POjekt1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.projekt1.ecosystem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main.projekt1.ecosystem" />
-      <option name="MAIN_CLASS_NAME" value="main.projekt1.ecosystem.EvoAnimalTest" />
-      <option name="METHOD_NAME" value="move" />
+      <option name="PACKAGE_NAME" value="main.projekt1.map" />
+      <option name="MAIN_CLASS_NAME" value="main.projekt1.map.EvoMapTest" />
+      <option name="METHOD_NAME" value="getFreeSpaces" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EvoAnimalTest.reproduce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EvoMapTest.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="POjekt1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.projekt1.ecosystem.*" />
+          <option name="PATTERN" value="main.projekt1.map.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="main.projekt1.ecosystem" />
-      <option name="MAIN_CLASS_NAME" value="main.projekt1.ecosystem.EvoAnimalTest" />
-      <option name="METHOD_NAME" value="reproduce" />
+      <option name="PACKAGE_NAME" value="main.projekt1.map" />
+      <option name="MAIN_CLASS_NAME" value="main.projekt1.map.EvoMapTest" />
+      <option name="METHOD_NAME" value="run" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -349,11 +408,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EvoMapTest.getFreeSpaces" />
+        <item itemvalue="JUnit.EvoMapTest.run" />
+        <item itemvalue="JUnit.AbstractWorldMapTest.isOccupied" />
         <item itemvalue="JUnit.AbstractWorldMapTest.run" />
         <item itemvalue="JUnit.AbstractWorldMapTest.place" />
-        <item itemvalue="JUnit.EvoAnimalTest.move" />
-        <item itemvalue="JUnit.EvoAnimalTest.reproduce" />
-        <item itemvalue="JUnit.EvoAnimalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -372,50 +431,51 @@
       <workItem from="1576059468470" duration="4632000" />
       <workItem from="1576420090367" duration="6226000" />
       <workItem from="1576656327595" duration="8826000" />
-      <workItem from="1576684760225" duration="7702000" />
+      <workItem from="1576684760225" duration="8322000" />
+      <workItem from="1576746253313" duration="4829000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EvoAnimalTest_reproduce - 2019.12.18 at 18h 57m 48s.xml">
-      <configuration name="EvoAnimalTest.reproduce" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EvoAnimalTest_move - 2019.12.18 at 18h 57m 55s.xml">
-      <configuration name="EvoAnimalTest.move" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EvoAnimalTest_move - 2019.12.18 at 18h 59m 09s.xml">
-      <configuration name="EvoAnimalTest.move" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EvoAnimalTest_move - 2019.12.18 at 19h 01m 58s.xml">
-      <configuration name="EvoAnimalTest.move" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EvoAnimalTest_move - 2019.12.18 at 19h 04m 45s.xml">
-      <configuration name="EvoAnimalTest.move" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EvoAnimalTest_move - 2019.12.18 at 19h 04m 56s.xml">
-      <configuration name="EvoAnimalTest.move" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AbstractWorldMapTest_place - 2019.12.19 at 09h 46m 11s.xml">
-      <configuration name="AbstractWorldMapTest.place" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AbstractWorldMapTest_place - 2019.12.19 at 09h 47m 16s.xml">
-      <configuration name="AbstractWorldMapTest.place" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AbstractWorldMapTest_place - 2019.12.19 at 09h 49m 08s.xml">
-      <configuration name="AbstractWorldMapTest.place" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AbstractWorldMapTest_run - 2019.12.19 at 09h 49m 53s.xml">
+    <history-entry file="AbstractWorldMapTest_run - 2019.12.19 at 13h 28m 46s.xml">
       <configuration name="AbstractWorldMapTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractWorldMapTest_run - 2019.12.19 at 13h 31m 07s.xml">
+      <configuration name="AbstractWorldMapTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractWorldMapTest_run - 2019.12.19 at 13h 37m 51s.xml">
+      <configuration name="AbstractWorldMapTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractWorldMapTest_run - 2019.12.19 at 13h 54m 12s.xml">
+      <configuration name="AbstractWorldMapTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractWorldMapTest_run - 2019.12.19 at 14h 02m 22s.xml">
+      <configuration name="AbstractWorldMapTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractWorldMapTest_run - 2019.12.19 at 14h 02m 25s.xml">
+      <configuration name="AbstractWorldMapTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractWorldMapTest_isOccupied - 2019.12.19 at 14h 09m 35s.xml">
+      <configuration name="AbstractWorldMapTest.isOccupied" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractWorldMapTest_isOccupied - 2019.12.19 at 14h 10m 31s.xml">
+      <configuration name="AbstractWorldMapTest.isOccupied" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EvoMapTest_run - 2019.12.19 at 14h 19m 01s.xml">
+      <configuration name="EvoMapTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EvoMapTest_getFreeSpaces - 2019.12.19 at 14h 22m 11s.xml">
+      <configuration name="EvoMapTest.getFreeSpaces" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39173000" />
+    <option name="totallyTimeSpent" value="44622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21214575" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21538462" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -423,7 +483,6 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Dependency Viewer" weight="0.3285968" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49959514" visible="true" weight="0.3285968" />
@@ -437,6 +496,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50040483" side_tool="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3285968" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.3285968" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -459,13 +519,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/MoveDirection.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/MapDirection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-333">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/Vector2d.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -478,39 +531,10 @@
     <entry file="file://$PROJECT_DIR$/src/test/EvoAnimalTest.java" />
     <entry file="file://$PROJECT_DIR$/test/test/EvoAnimalTest.java" />
     <entry file="file://$PROJECT_DIR$/test/main/projekt1/ecosystem/EvoAnimalTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/MapVisualizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1024">
-          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
-          <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
-          <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
-          <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
-          <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/World.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/IPositionChangeObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="85" selection-start-line="6" selection-start-column="85" selection-end-line="6" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -531,50 +555,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java">
+    <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
+        <state relative-caret-position="672">
+          <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3263#3264#0" expanded="true" />
-            <element signature="e#3295#3296#0" expanded="true" />
-            <element signature="e#3325#3326#0" expanded="true" />
-            <element signature="e#3354#3355#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/test/POjekt1/main/projekt1/ecosystem/EvoAnimalTest.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/MapVisualizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1024">
+          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+          <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+          <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+          <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+          <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/MapDirection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-416">
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/IPositionChangeObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="120" column="14" selection-start-line="120" selection-start-column="14" selection-end-line="120" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1303#1304#0" expanded="true" />
+            <element signature="e#1350#1351#0" expanded="true" />
+            <element signature="e#1414#1415#0" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1396#1397#0" expanded="true" />
-            <element signature="e#1509#1510#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="74">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="147" column="85" selection-start-line="147" selection-start-column="85" selection-end-line="147" selection-end-column="85" />
+        <state relative-caret-position="128">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5427#5428#0" expanded="true" />
-            <element signature="e#5456#5457#0" expanded="true" />
-            <element signature="e#5485#5486#0" expanded="true" />
-            <element signature="e#5513#5514#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/EvoMapTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
         </state>
       </provider>
     </entry>
