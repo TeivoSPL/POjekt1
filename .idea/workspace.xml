@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93956ae2-32b4-4475-a220-13645763fcf3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/projekt1/map/IWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/map/IWorldMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+            <state relative-caret-position="158">
+              <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3263#3264#0" expanded="true" />
@@ -65,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -81,17 +79,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="282">
+              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1414#1415#0" expanded="true" />
-                <element signature="e#1586#1587#0" expanded="true" />
-                <element signature="e#1635#1636#0" expanded="true" />
+                <element signature="e#1396#1397#0" expanded="true" />
+                <element signature="e#1509#1510#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -148,11 +154,12 @@
         <option value="$PROJECT_DIR$/test/test/EvoAnimalTest.java" />
         <option value="$PROJECT_DIR$/test/main/projekt1/ecosystem/EvoAnimalTest.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/mechanics/IPositionChangeObserver.java" />
-        <option value="$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java" />
         <option value="$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java" />
-        <option value="$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/map/IWorldMap.java" />
+        <option value="$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java" />
+        <option value="$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java" />
+        <option value="$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java" />
       </list>
     </option>
   </component>
@@ -240,6 +247,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="main.projekt1.map" />
       <recent name="main.projekt1.ecosystem" />
       <recent name="test" />
     </key>
@@ -259,43 +267,34 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EvoAnimalTest.move">
-    <configuration name="EvoAnimalTest" type="ArquillianJUnit" factoryName="" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AbstractWorldMapTest.run">
+    <configuration name="AbstractWorldMapTest.place" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="POjekt1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="main.projekt1.map.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.EvoAnimalTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="main.projekt1.map" />
+      <option name="MAIN_CLASS_NAME" value="main.projekt1.map.AbstractWorldMapTest" />
+      <option name="METHOD_NAME" value="place" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EvoAnimalTest.reproduce" type="ArquillianJUnit" factoryName="" temporary="true" nameIsGenerated="true">
+    <configuration name="AbstractWorldMapTest.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="POjekt1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="main.projekt1.map.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.EvoAnimalTest" />
-      <option name="METHOD_NAME" value="reproduce" />
+      <option name="PACKAGE_NAME" value="main.projekt1.map" />
+      <option name="MAIN_CLASS_NAME" value="main.projekt1.map.AbstractWorldMapTest" />
+      <option name="METHOD_NAME" value="run" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -350,11 +349,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AbstractWorldMapTest.run" />
+        <item itemvalue="JUnit.AbstractWorldMapTest.place" />
         <item itemvalue="JUnit.EvoAnimalTest.move" />
         <item itemvalue="JUnit.EvoAnimalTest.reproduce" />
         <item itemvalue="JUnit.EvoAnimalTest" />
-        <item itemvalue="Arquillian JUnit.EvoAnimalTest" />
-        <item itemvalue="Arquillian JUnit.EvoAnimalTest.reproduce" />
       </list>
     </recent_temporary>
   </component>
@@ -373,23 +372,11 @@
       <workItem from="1576059468470" duration="4632000" />
       <workItem from="1576420090367" duration="6226000" />
       <workItem from="1576656327595" duration="8826000" />
-      <workItem from="1576684760225" duration="6024000" />
+      <workItem from="1576684760225" duration="7702000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EvoAnimalTest_move - 2019.12.18 at 18h 36m 00s.xml">
-      <configuration name="EvoAnimalTest.move" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EvoAnimalTest_move - 2019.12.18 at 18h 37m 34s.xml">
-      <configuration name="EvoAnimalTest.move" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EvoAnimalTest_move - 2019.12.18 at 18h 40m 53s.xml">
-      <configuration name="EvoAnimalTest.move" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EvoAnimalTest_move - 2019.12.18 at 18h 51m 53s.xml">
-      <configuration name="EvoAnimalTest.move" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="EvoAnimalTest_reproduce - 2019.12.18 at 18h 57m 48s.xml">
       <configuration name="EvoAnimalTest.reproduce" configurationId="JUnit" />
     </history-entry>
@@ -408,15 +395,27 @@
     <history-entry file="EvoAnimalTest_move - 2019.12.18 at 19h 04m 56s.xml">
       <configuration name="EvoAnimalTest.move" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AbstractWorldMapTest_place - 2019.12.19 at 09h 46m 11s.xml">
+      <configuration name="AbstractWorldMapTest.place" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractWorldMapTest_place - 2019.12.19 at 09h 47m 16s.xml">
+      <configuration name="AbstractWorldMapTest.place" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractWorldMapTest_place - 2019.12.19 at 09h 49m 08s.xml">
+      <configuration name="AbstractWorldMapTest.place" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbstractWorldMapTest_run - 2019.12.19 at 09h 49m 53s.xml">
+      <configuration name="AbstractWorldMapTest.run" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37495000" />
+    <option name="totallyTimeSpent" value="39173000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27125505" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21214575" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -427,7 +426,7 @@
       <window_info anchor="bottom" id="Dependency Viewer" weight="0.3285968" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" visible="true" weight="0.3285968" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49959514" visible="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -505,20 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3263#3264#0" expanded="true" />
-            <element signature="e#3295#3296#0" expanded="true" />
-            <element signature="e#3325#3326#0" expanded="true" />
-            <element signature="e#3354#3355#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -536,20 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="147" column="85" selection-start-line="147" selection-start-column="85" selection-end-line="147" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5427#5428#0" expanded="true" />
-            <element signature="e#5456#5457#0" expanded="true" />
-            <element signature="e#5485#5486#0" expanded="true" />
-            <element signature="e#5513#5514#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/IWorldMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -560,15 +531,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java">
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="158">
+          <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1414#1415#0" expanded="true" />
-            <element signature="e#1586#1587#0" expanded="true" />
-            <element signature="e#1635#1636#0" expanded="true" />
+            <element signature="e#3263#3264#0" expanded="true" />
+            <element signature="e#3295#3296#0" expanded="true" />
+            <element signature="e#3325#3326#0" expanded="true" />
+            <element signature="e#3354#3355#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1509#1510#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="147" column="85" selection-start-line="147" selection-start-column="85" selection-end-line="147" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5427#5428#0" expanded="true" />
+            <element signature="e#5456#5457#0" expanded="true" />
+            <element signature="e#5485#5486#0" expanded="true" />
+            <element signature="e#5513#5514#0" expanded="true" />
           </folding>
         </state>
       </provider>
