@@ -41,7 +41,7 @@ public class EvoMapTest {
 
         map.reproduce();
 
-        assertEquals("There should be 4 animals on the map",map.animals.);//tutaj tez nie da sie policzyc zwierzat!
+//        assertEquals("There should be 4 animals on the map",map.animals.);//tutaj tez nie da sie policzyc zwierzat!
     }
 
     @Test

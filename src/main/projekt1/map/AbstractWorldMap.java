@@ -7,31 +7,36 @@ import java.util.*;
 
 public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver {
 
-    protected HashMap<Vector2d,LinkedList<EvoAnimal>> animals;
+    protected HashMap<Vector2d,LinkedList<EvoAnimal>> animalsOnPosition;
+    protected LinkedList<EvoAnimal> animalsOnMap;
 
     @Override
     public void place(EvoAnimal animal) {
-        if(!this.animals.containsKey(animal.getPlacement())){
-            this.animals.put(animal.getPlacement(),new LinkedList<>());
+        if(!this.animalsOnPosition.containsKey(animal.getPlacement())){
+            this.animalsOnPosition.put(animal.getPlacement(),new LinkedList<>());
         }
 
-        this.animals.get(animal.getPlacement()).add(animal);
-        this.animals.get(animal.getPlacement()).sort(Comparator.comparing(EvoAnimal::getEnergy));
+        this.animalsOnPosition.get(animal.getPlacement()).add(animal);
+        this.animalsOnPosition.get(animal.getPlacement()).sort(Comparator.comparing(EvoAnimal::getEnergy));
+
+        this.animalsOnMap.add(animal);
+
         animal.addObserver(this);
     }
 
     public void run() {
 
         //death round
-        for(LinkedList<EvoAnimal> animalsOnPosition: this.animals.values()){
+        for(LinkedList<EvoAnimal> animalsOnPosition: this.animalsOnPosition.values()){
 
             for(EvoAnimal a : animalsOnPosition)
             {
                 if(a.getEnergy()<=0){
-                    this.animals.get(a.getPlacement()).remove(a);
+                    this.animalsOnPosition.get(a.getPlacement()).remove(a);
+                    this.animalsOnMap.remove(a);
 
-                    if(this.animals.get(a.getPlacement()).size()==0){
-                        this.animals.remove(a.getPlacement());
+                    if(this.objectAt(a.getPlacement()).size()==0){
+                        this.animalsOnPosition.remove(a.getPlacement());
                     }
                 }
             }
@@ -46,22 +51,22 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     }
 
     public LinkedList<EvoAnimal> objectAt(Vector2d position) {
-        return this.animals.get(position);
+        return this.animalsOnPosition.get(position);
     }
 
     public void positionChanged(Vector2d oldPosition, Vector2d newPosition, EvoAnimal animal) {
-        this.animals.get(oldPosition).remove(animal);
+        this.animalsOnPosition.get(oldPosition).remove(animal);
 
-        if(this.animals.get(oldPosition).size()==0){
-            this.animals.remove(oldPosition);
+        if(this.animalsOnPosition.get(oldPosition).size()==0){
+            this.animalsOnPosition.remove(oldPosition);
         }
 
-        if(!this.animals.containsKey(newPosition)){
-            this.animals.put(newPosition,new LinkedList<>());
+        if(!this.animalsOnPosition.containsKey(newPosition)){
+            this.animalsOnPosition.put(newPosition,new LinkedList<>());
         }
 
-        this.animals.get(newPosition).add(animal);
-        this.animals.get(newPosition).sort(Comparator.comparing(EvoAnimal::getEnergy));
+        this.animalsOnPosition.get(newPosition).add(animal);
+        this.animalsOnPosition.get(newPosition).sort(Comparator.comparing(EvoAnimal::getEnergy));
     }
 }
 

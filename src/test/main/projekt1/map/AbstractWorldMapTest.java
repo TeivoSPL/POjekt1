@@ -12,20 +12,20 @@ public class AbstractWorldMapTest {
     public void place() {
         EvoMap map = new EvoMap();
 
-        assertEquals("Initial animals size should be 0",0,map.animals.size());
+        assertEquals("Initial animals size should be 0",0,map.animalsOnPosition.size());
 
         EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2));
         EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(200,200));
         EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(-1,-1));
 
         map.place(animal1);
-        assertEquals("Animals size should be 1",1,map.animals.size());
+        assertEquals("Animals size should be 1",1,map.animalsOnPosition.size());
 
         map.place(animal2);
-        assertEquals("Animals size should be 2",2,map.animals.size());
+        assertEquals("Animals size should be 2",2,map.animalsOnPosition.size());
 
         map.place(animal3);
-        assertEquals("Animals size should be 3",3,map.animals.size());
+        assertEquals("Animals size should be 3",3,map.animalsOnPosition.size());
     }
 
     @Test

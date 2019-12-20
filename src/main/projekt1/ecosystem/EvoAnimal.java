@@ -22,7 +22,6 @@ public class EvoAnimal {
     public EvoAnimal(EvoMap map, Vector2d initialPosition){
         this.orientation = MapDirection.NORTH;      //dodać randomowość
         this.observers = new LinkedList<>();
-        this.observers.add(map);
         this.map = map;
         this.placement = this.adjustPosition(initialPosition);
         this.energy = 10;
@@ -84,10 +83,11 @@ public class EvoAnimal {
             this.orientation = this.orientation.next();
         }
 
-        Vector2d newPosition = this.adjustPosition(this.orientation.toUnitVector().add(this.placement));
+        Vector2d newPosition = this.adjustPosition(this.placement.add(this.orientation.toUnitVector()));
+        Vector2d oldPosition = this.placement;
 
-        this.positionChanged(newPosition);
         this.placement = newPosition;
+        this.positionChanged(oldPosition);
 
         this.live();
     }
@@ -116,14 +116,17 @@ public class EvoAnimal {
         this.observers.remove(observer);
     }
 
-    private void positionChanged(Vector2d newPosition){
+    private void positionChanged(Vector2d oldPosition){
         for(IPositionChangeObserver o : this.observers){
-            o.positionChanged(this.placement,newPosition, this);
+            o.positionChanged(oldPosition,this.placement, this);
         }
     }
 
     private Vector2d adjustPosition(Vector2d position){
-        return new Vector2d(position.getX()%this.map.getWidth(),position.getY()%this.map.getHeight());
+        return new Vector2d(
+                position.getX()%this.map.getWidth(),
+                position.getY()%this.map.getHeight()
+        );
     }
 
 }
