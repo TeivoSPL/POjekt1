@@ -1,11 +1,12 @@
 package main.projekt1.map;
 import main.projekt1.ecosystem.EvoAnimal;
 import main.projekt1.mechanics.IPositionChangeObserver;
+import main.projekt1.mechanics.MapVisualizer;
 import main.projekt1.mechanics.Vector2d;
 
 import java.util.*;
 
-public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver {
+public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObserver{
 
     protected HashMap<Vector2d,LinkedList<EvoAnimal>> animalsOnPosition;
     protected LinkedList<EvoAnimal> animalsOnMap;
@@ -71,6 +72,12 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
 
         this.animalsOnPosition.get(newPosition).add(animal);
         this.animalsOnPosition.get(newPosition).sort(Comparator.comparing(EvoAnimal::getEnergy));
+    }
+
+    @Override
+    public String toString() {
+        MapVisualizer viz = new MapVisualizer(this);
+        return viz.draw(new Vector2d(0,0),new Vector2d(this.width-1,this.height-1));
     }
 }
 

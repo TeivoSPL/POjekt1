@@ -2,6 +2,7 @@ package main.projekt1.map;
 
 import main.projekt1.ecosystem.EvoAnimal;
 import main.projekt1.ecosystem.Grass;
+import main.projekt1.mechanics.MapVisualizer;
 import main.projekt1.mechanics.Vector2d;
 
 import java.util.*;
@@ -26,7 +27,7 @@ public class EvoMap extends AbstractWorldMap {
         this.animalsOnMap = new LinkedList<>();
     }
 
-    private void generatePlants(){//dodaj ifa ze nie dodaje jak jest pelne, uwzglednic jungleratio
+    public void generatePlants(){//dodaj ifa ze nie dodaje jak jest pelne, uwzglednic jungleratio
         //generate coordinates for plant in jungle
         //safecounter is crucial if there is not a lot of space to grow a new plant
         int safeCounter = 0;
