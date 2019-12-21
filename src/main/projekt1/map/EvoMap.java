@@ -8,22 +8,25 @@ import java.util.*;
 
 public class EvoMap extends AbstractWorldMap {
 
-    private int width;
-    private int height;
+    private int plantEnergy;
+    private double jungleRatio;
+
     private Map<Vector2d, Grass> grass;
 
-    public EvoMap(){
-        this.width = 100;
-        this.height = 30;
+    public EvoMap(int mapWidth, int mapHeight, int startEnergy, int moveEnergy, int plantEnergy, double jungleRatio){
+        this.width = mapWidth;
+        this.height = mapHeight;
+        this.startEnergy = startEnergy;
+        this.moveEnergy = moveEnergy;
+        this.plantEnergy = plantEnergy;
+        this.jungleRatio = jungleRatio;
+
         this.grass = new HashMap<>();
         this.animalsOnPosition = new HashMap<>();
         this.animalsOnMap = new LinkedList<>();
     }
 
-    /**
-        This function generates two plants (almost) every time it is called.
-     */
-    private void generatePlants(){
+    private void generatePlants(){//dodaj ifa ze nie dodaje jak jest pelne, uwzglednic jungleratio
         //generate coordinates for plant in jungle
         //safecounter is crucial if there is not a lot of space to grow a new plant
         int safeCounter = 0;
@@ -67,7 +70,7 @@ public class EvoMap extends AbstractWorldMap {
 
         //movement round
         for (EvoAnimal a : this.animalsOnMap) {
-            a.move();
+            a.move(this.moveEnergy);
         }
     }
 
@@ -80,13 +83,13 @@ public class EvoMap extends AbstractWorldMap {
 
                 if (contenders.size() > 1) {
                     for (EvoAnimal c : contenders) {
-                        c.eat(5 / contenders.size());
+                        c.eat(this.plantEnergy / contenders.size());
                     }
                 } else {
-                    contenders.get(0).eat(5);
+                    contenders.get(0).eat(this.plantEnergy);
                 }
 
-                this.grass.remove((position));
+                this.grass.remove(position);
             }
         }
     }

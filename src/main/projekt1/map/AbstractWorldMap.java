@@ -9,6 +9,10 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
 
     protected HashMap<Vector2d,LinkedList<EvoAnimal>> animalsOnPosition;
     protected LinkedList<EvoAnimal> animalsOnMap;
+    protected int width;
+    protected int height;
+    protected int startEnergy;
+    protected int moveEnergy;
 
     @Override
     public void place(EvoAnimal animal) {

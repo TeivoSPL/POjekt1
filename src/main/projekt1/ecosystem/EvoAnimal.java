@@ -19,12 +19,12 @@ public class EvoAnimal {
     private int energy;
     private ArrayList<Integer> genome;
 
-    public EvoAnimal(EvoMap map, Vector2d initialPosition){
+    public EvoAnimal(EvoMap map, Vector2d initialPosition, int energy){
         this.orientation = MapDirection.NORTH;      //dodać randomowość
         this.observers = new LinkedList<>();
         this.map = map;
         this.placement = this.adjustPosition(initialPosition);
-        this.energy = 10;
+        this.energy = energy;
         this.genome = new ArrayList<>();
         for(int i=0;i<32;i++){
             genome.add((int)(Math.random()*8));
@@ -33,11 +33,10 @@ public class EvoAnimal {
     }
 
     public EvoAnimal(EvoMap map, Vector2d initialPosition, ArrayList<Integer> genome, MapDirection orientation, int energy){
-        this(map, initialPosition);
+        this(map, initialPosition,energy);
         this.genome = genome;
         this.genome.sort(Integer::compareTo);
         this.orientation = orientation;
-        this.energy = energy;
     }
 
     @Override
@@ -77,7 +76,7 @@ public class EvoAnimal {
         return null;
     }
 
-    public void move() {
+    public void move(int moveEnergy) {
         int rotation = this.genome.get((int)(Math.random()*32));
         for(int i=0;i<rotation;i++){
             this.orientation = this.orientation.next();
@@ -89,15 +88,15 @@ public class EvoAnimal {
         this.placement = newPosition;
         this.positionChanged(oldPosition);
 
-        this.live();
+        this.live(moveEnergy);
     }
 
     public void eat(int energyGain){
         this.energy+=energyGain;
     }
 
-    private void live() {
-        this.energy -= 1;
+    private void live(int energySpent) {
+        this.energy -= energySpent;
     }
 
     public int getEnergy() {
