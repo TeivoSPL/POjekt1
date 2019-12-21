@@ -20,7 +20,7 @@ public class World {
         String externalFile;
         do {
             System.out.println("Do you want to read variables from an external file? (y/n)");
-            externalFile = input.next("> ");
+            externalFile = input.next();
 
             switch (externalFile) {
                 case "y":
@@ -35,27 +35,27 @@ public class World {
         }while(!(externalFile.equals("y") || externalFile.equals("n")));
 
         EvoMap map = new EvoMap(
-                (int)variables.get("mapWidth"),
-                (int)variables.get("mapHeight"),
-                (int)variables.get("startEnergy"),
-                (int)variables.get("moveEnergy"),
-                (int)variables.get("plantEnergy"),
+                ((Long)variables.get("mapWidth")).intValue(),
+                ((Long)variables.get("mapHeight")).intValue(),
+                ((Long)variables.get("startEnergy")).intValue(),
+                ((Long)variables.get("moveEnergy")).intValue(),
+                ((Long)variables.get("plantEnergy")).intValue(),
                 (double)variables.get("jungleRatio")
         );
 
-        for(int i = 0; i<(int)variables.get("animalsOnStart"); i++){
+        for(int i = 0; i<((Long)variables.get("animalsOnStart")).intValue(); i++){
             Vector2d startingPosition = new Vector2d(
-                    (int)(Math.random()*(int)variables.get("mapWidth")),
-                    (int)(Math.random()*(int)variables.get("mapHeight"))
+                    (int)(Math.random()*((Long)variables.get("mapWidth")).intValue()),
+                    (int)(Math.random()*((Long)variables.get("mapHeight")).intValue())
                     );
-            EvoAnimal a = new EvoAnimal(map, startingPosition, (int)variables.get("startEnergy"));
+            EvoAnimal a = new EvoAnimal(map, startingPosition, ((Long)variables.get("startEnergy")).intValue());
             map.place(a);
         }
 
         String decision;
         do{
             System.out.println("What to do next? (run/exit)");
-            decision = input.next("> ");
+            decision = input.next();
 
             switch (decision){
                 case "exit":
@@ -107,13 +107,20 @@ public class World {
         Scanner variableInput = new Scanner(System.in);
 
         System.out.println("Please enter starting variables.");
-        output.put("mapWidth",variableInput.next("Map width: "));
-        output.put("mapHeight",variableInput.next("Map height: "));
-        output.put("startEnergy",variableInput.next("Animal starting energy: "));
-        output.put("moveEnergy",variableInput.next("Energy required to move: "));
-        output.put("plantEnergy",variableInput.next("Plant energy: "));
-        output.put("jungleRatio",variableInput.next("Jungle to steppe ratio: "));
-        output.put("animalsOnStart",variableInput.next("Number of animals in the beginning of the simulation: "));
+        System.out.print("Map width: ");
+        output.put("mapWidth",variableInput.nextInt());
+        System.out.print("Map height: ");
+        output.put("mapHeight",variableInput.nextInt());
+        System.out.print("Animal starting energy: ");
+        output.put("startEnergy",variableInput.nextInt());
+        System.out.print("Animal move energy: ");
+        output.put("moveEnergy",variableInput.nextInt());
+        System.out.print("Energy provided by plants: ");
+        output.put("plantEnergy",variableInput.nextInt());
+        System.out.print("Jungle to steppe ratio: ");
+        output.put("jungleRatio",variableInput.nextDouble());
+        System.out.print("Animals on simulation start: ");
+        output.put("animalsOnStart",variableInput.nextInt());
 
         return output;
     }

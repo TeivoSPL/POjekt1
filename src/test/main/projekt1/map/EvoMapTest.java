@@ -10,11 +10,11 @@ public class EvoMapTest {
 
     @Test
     public void run() {
-        EvoMap map = new EvoMap();
+        EvoMap map = new EvoMap(100,30,10,1,5,0.5);
 
-        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2));
-        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(2,23));
-        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0));
+        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2),10);
+        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(2,23),10);
+        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0),10);
 
         map.place(animal1);
         map.place(animal2);
@@ -29,11 +29,11 @@ public class EvoMapTest {
 
     @Test
     public void reproduce() {
-        EvoMap map = new EvoMap();
+        EvoMap map = new EvoMap(100,30,10,1,5,0.5);
 
-        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2));
-        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(2,2));
-        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0));
+        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2),10);
+        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(2,2),10);
+        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0),10);
 
         map.place(animal1);
         map.place(animal2);
@@ -46,11 +46,11 @@ public class EvoMapTest {
 
     @Test
     public void getFreeSpaces() {
-        EvoMap map = new EvoMap();
+        EvoMap map = new EvoMap(100,30,10,1,5,0.5);
 
-        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2));
-        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(2,3));
-        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0));
+        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2),10);
+        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(2,3),10);
+        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0),10);
 
         map.place(animal1);
         map.place(animal2);

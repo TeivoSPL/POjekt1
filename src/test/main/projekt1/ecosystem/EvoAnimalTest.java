@@ -10,11 +10,11 @@ public class EvoAnimalTest {
 
     @Test
     public void reproduce() {
-        EvoMap map = new EvoMap();
+        EvoMap map = new EvoMap(100,30,10,1,5,0.5);
 
-        EvoAnimal mother = new EvoAnimal(map, new Vector2d(2,2));
-        EvoAnimal father1 = new EvoAnimal(map, new Vector2d(2,2));
-        EvoAnimal father2 = new EvoAnimal(map, new Vector2d(2,1));
+        EvoAnimal mother = new EvoAnimal(map, new Vector2d(2,2),10);
+        EvoAnimal father1 = new EvoAnimal(map, new Vector2d(2,2),10);
+        EvoAnimal father2 = new EvoAnimal(map, new Vector2d(2,1),10);
 
         map.place(mother);
         map.place(father1);
@@ -26,22 +26,22 @@ public class EvoAnimalTest {
 
     @Test
     public void move() {
-        EvoMap map = new EvoMap();
+        EvoMap map = new EvoMap(100,30,10,1,5,0.5);
 
-        EvoAnimal animal1 = new EvoAnimal(map,new Vector2d(2,2));
-        EvoAnimal animal2 = new EvoAnimal(map,new Vector2d(2,2));
-        EvoAnimal animal3 = new EvoAnimal(map,new Vector2d(0,0));
-        EvoAnimal animal4 = new EvoAnimal(map,new Vector2d(0,29));
+        EvoAnimal animal1 = new EvoAnimal(map,new Vector2d(2,2),10);
+        EvoAnimal animal2 = new EvoAnimal(map,new Vector2d(2,2),10);
+        EvoAnimal animal3 = new EvoAnimal(map,new Vector2d(0,0),10);
+        EvoAnimal animal4 = new EvoAnimal(map,new Vector2d(0,29),10);
 
         map.place(animal1);
         map.place(animal2);
         map.place(animal3);
         map.place(animal4);
 
-        animal1.move();
-        animal2.move();
-        animal3.move();
-        animal4.move();
+        animal1.move(1);
+        animal2.move(1);
+        animal3.move(1);
+        animal4.move(1);
 
         assertNotEquals("Position should be other than 2,2!",new Vector2d(2,2),animal1.getPlacement());
         assertNotEquals("Position should be other than 2,2!",new Vector2d(2,2),animal2.getPlacement());

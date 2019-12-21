@@ -30,6 +30,7 @@ public class EvoAnimal {
             genome.add((int)(Math.random()*8));
         }
         this.genome.sort(Integer::compareTo);
+        this.addObserver(map);
     }
 
     public EvoAnimal(EvoMap map, Vector2d initialPosition, ArrayList<Integer> genome, MapDirection orientation, int energy){

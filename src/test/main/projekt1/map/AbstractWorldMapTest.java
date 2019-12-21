@@ -10,13 +10,13 @@ public class AbstractWorldMapTest {
 
     @Test
     public void place() {
-        EvoMap map = new EvoMap();
+        EvoMap map = new EvoMap(100,30,10,1,5,0.5);
 
         assertEquals("Initial animals size should be 0",0,map.animalsOnPosition.size());
 
-        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2));
-        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(200,200));
-        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(-1,-1));
+        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2),10);
+        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(200,200),10);
+        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(-1,-1),10);
 
         map.place(animal1);
         assertEquals("Animals size should be 1",1,map.animalsOnPosition.size());
@@ -30,11 +30,11 @@ public class AbstractWorldMapTest {
 
     @Test
     public void isOccupied() {
-        EvoMap map = new EvoMap();
+        EvoMap map = new EvoMap(100,30,10,1,5,0.5);
 
-        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2));
-        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(2,23));
-        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0));
+        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2),10);
+        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(2,23),10);
+        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0),10);
 
         map.place(animal1);
         map.place(animal1);
@@ -51,11 +51,11 @@ public class AbstractWorldMapTest {
 
     @Test
     public void objectAt() {
-        EvoMap map = new EvoMap();
+        EvoMap map = new EvoMap(100,30,10,1,5,0.5);
 
-        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2));
-        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(2,23));
-        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0));
+        EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2),10);
+        EvoAnimal animal2 = new EvoAnimal(map, new Vector2d(2,23),10);
+        EvoAnimal animal3 = new EvoAnimal(map, new Vector2d(0,0),10);
 
         map.place(animal1);
         map.place(animal1);

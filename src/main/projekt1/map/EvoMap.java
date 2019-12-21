@@ -12,8 +12,6 @@ public class EvoMap extends AbstractWorldMap {
     private int plantEnergy;
     private double jungleRatio;
 
-    private Map<Vector2d, Grass> grass;
-
     public EvoMap(int mapWidth, int mapHeight, int startEnergy, int moveEnergy, int plantEnergy, double jungleRatio){
         this.width = mapWidth;
         this.height = mapHeight;
@@ -27,40 +25,48 @@ public class EvoMap extends AbstractWorldMap {
         this.animalsOnMap = new LinkedList<>();
     }
 
-    public void generatePlants(){//dodaj ifa ze nie dodaje jak jest pelne, uwzglednic jungleratio
-        //generate coordinates for plant in jungle
-        //safecounter is crucial if there is not a lot of space to grow a new plant
-        int safeCounter = 0;
-        Vector2d newGrassPosition;
-        do{
-            newGrassPosition = new Vector2d(
-                    (int)(Math.random()*10+((this.width-1)/2-1)),
-                    (int)(Math.random()*10+((this.height)/2-1))
-            );
-            safeCounter++;
-        }while(
-                this.grass.get(newGrassPosition)!=null &&
-                safeCounter<100
-        );
-        if(safeCounter!=100){
-            Grass jungleGrass = new Grass(newGrassPosition);
-            grass.put(newGrassPosition,jungleGrass);
-        }
+    public void generatePlants(){// uwzglednic jungleratio
+        if(grass.keySet().size() != this.height*this.width){
+            //generate coordinates for plant in jungle
+            //jungle is located in lower left corner
+            int safeCounter = 0;
+            Vector2d newGrassPosition;
 
-        //generate coordinates for plant in steppe
-        safeCounter = 0;
-        do {
-            newGrassPosition = new Vector2d((int)(Math.random()*100),(int)(Math.random()*30));
-            safeCounter++;
-        }while(
-                newGrassPosition.precedes(new Vector2d(54,19)) &&
-                newGrassPosition.follows(new Vector2d(44,9)) &&
-                this.grass.get(newGrassPosition) != null &&
-                safeCounter < this.height*this.width-100
-        );
-        if(safeCounter < this.height*this.width-100){
-            Grass steppeGrass = new Grass(newGrassPosition);
-            grass.put(newGrassPosition,steppeGrass);
+            do{
+                newGrassPosition = new Vector2d(
+                        (int)(Math.random()*(this.jungleRatio*this.width)),
+                        (int)(Math.random()*(this.jungleRatio*this.height))
+                );
+                safeCounter++;
+            }while(
+                    this.grass.get(newGrassPosition)!=null &&
+                    safeCounter < this.jungleRatio*this.width*this.jungleRatio*this.height
+            );
+
+            if(safeCounter!=this.jungleRatio*this.width*this.jungleRatio*this.height){
+                Grass jungleGrass = new Grass(newGrassPosition);
+                grass.put(newGrassPosition,jungleGrass);
+            }
+
+            //generate coordinates for plant in steppe
+            safeCounter = 0;
+
+            do {
+                newGrassPosition = new Vector2d((int)(Math.random()*this.width),(int)(Math.random()*this.height));
+                safeCounter++;
+            }while(
+                    newGrassPosition.precedes(new Vector2d(
+                            (int)(this.width*this.jungleRatio),
+                            (int)(this.width*this.jungleRatio)
+                    )) &&
+                    this.grass.get(newGrassPosition) != null &&
+                    safeCounter < this.height*this.width-this.jungleRatio*this.width*this.jungleRatio*this.height
+            );
+
+            if(safeCounter < this.height*this.width-this.jungleRatio*this.width*this.jungleRatio*this.height){
+                Grass steppeGrass = new Grass(newGrassPosition);
+                grass.put(newGrassPosition,steppeGrass);
+            }
         }
     }
 
@@ -78,7 +84,7 @@ public class EvoMap extends AbstractWorldMap {
     public void eat() {
         //eating round
         for (Vector2d position : this.animalsOnPosition.keySet()) {
-            if (this.grass.get(position) != null) {
+            if (this.grass.containsKey(position)) {
 
                 LinkedList<EvoAnimal> contenders = this.getStrongest(position);
 
@@ -103,7 +109,7 @@ public class EvoMap extends AbstractWorldMap {
 
                 LinkedList<EvoAnimal> partners = getStrongest(position);
 
-                if (partners.size() > 1 && partners.get(0).getEnergy() > 5) { //dać zmienną na minimalną energię rozmnazania
+                if (partners.size() > 1 && partners.get(0).getEnergy() > 5) {
 
                     int fatherIndex, motherIndex;
 
@@ -141,7 +147,7 @@ public class EvoMap extends AbstractWorldMap {
 
         for(int i = -1; i<2; i++){
             for(int j = -1; j<2; j++){
-                if(objectAt(new Vector2d(x+i,y+j))==null){
+                if(animalsAt(new Vector2d(x+i,y+j))==null){
                     result.add(new Vector2d(x+i,y+j));
                 }
             }

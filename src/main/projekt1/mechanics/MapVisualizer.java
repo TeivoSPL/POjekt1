@@ -81,7 +81,13 @@ public class MapVisualizer {
                 result = EMPTY_CELL;
             }
         } else {
-            result = EMPTY_CELL;
+            if(this.map.grassAt(currentPosition)!=null){
+                Object object = this.map.grassAt(currentPosition);
+                result = object.toString();
+            }
+            else{
+                result = EMPTY_CELL;
+            }
         }
         return result;
     }

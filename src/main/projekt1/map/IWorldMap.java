@@ -1,7 +1,10 @@
 package main.projekt1.map;
 
 import main.projekt1.ecosystem.EvoAnimal;
+import main.projekt1.ecosystem.Grass;
 import main.projekt1.mechanics.Vector2d;
+
+import java.util.LinkedList;
 
 /**
  * The interface responsible for interacting with the map of the world.
@@ -37,11 +40,20 @@ public interface IWorldMap {
     boolean isOccupied(Vector2d position);
 
     /**
-     * Return an object at a given position.
+     * Return a LinkedList of animals at a given position.
      *
      * @param position
      *            The position of the object.
-     * @return Object or null if the position is not occupied.
+     * @return LinkedList<EvoAnimal> or null if the position is not occupied.
      */
-    Object objectAt(Vector2d position);
+    LinkedList<EvoAnimal> animalsAt(Vector2d position);
+
+    /**
+     * Return grass at a given position.
+     *
+     * @param position
+     *          The position of the object.
+     * @return Grass or null if the position has no grass.
+     */
+    Grass grassAt(Vector2d position);
 }

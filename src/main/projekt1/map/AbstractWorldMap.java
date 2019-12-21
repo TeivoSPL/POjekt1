@@ -1,5 +1,6 @@
 package main.projekt1.map;
 import main.projekt1.ecosystem.EvoAnimal;
+import main.projekt1.ecosystem.Grass;
 import main.projekt1.mechanics.IPositionChangeObserver;
 import main.projekt1.mechanics.MapVisualizer;
 import main.projekt1.mechanics.Vector2d;
@@ -10,6 +11,8 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
 
     protected HashMap<Vector2d,LinkedList<EvoAnimal>> animalsOnPosition;
     protected LinkedList<EvoAnimal> animalsOnMap;
+    protected Map<Vector2d, Grass> grass;
+
     protected int width;
     protected int height;
     protected int startEnergy;
@@ -25,13 +28,11 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
         this.animalsOnPosition.get(animal.getPlacement()).sort(Comparator.comparing(EvoAnimal::getEnergy));
 
         this.animalsOnMap.add(animal);
-
-        animal.addObserver(this);
     }
 
     public void run() {
 
-        //death round
+        //death round - kill all animals without energy
         for(LinkedList<EvoAnimal> animalsOnPosition: this.animalsOnPosition.values()){
 
             for(EvoAnimal a : animalsOnPosition)
@@ -40,7 +41,7 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
                     this.animalsOnPosition.get(a.getPlacement()).remove(a);
                     this.animalsOnMap.remove(a);
 
-                    if(this.objectAt(a.getPlacement()).size()==0){
+                    if(this.animalsAt(a.getPlacement()).size()==0){
                         this.animalsOnPosition.remove(a.getPlacement());
                     }
                 }
@@ -52,10 +53,10 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
 
     @Override
     public boolean isOccupied(Vector2d position) {
-        return objectAt(position)!=null;
+        return animalsAt(position)!=null;
     }
 
-    public LinkedList<EvoAnimal> objectAt(Vector2d position) {
+    public LinkedList<EvoAnimal> animalsAt(Vector2d position) {
         return this.animalsOnPosition.get(position);
     }
 
@@ -78,6 +79,11 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     public String toString() {
         MapVisualizer viz = new MapVisualizer(this);
         return viz.draw(new Vector2d(0,0),new Vector2d(this.width-1,this.height-1));
+    }
+
+    @Override
+    public Grass grassAt(Vector2d position) {
+        return grass.get(position);
     }
 }
 

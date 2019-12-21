@@ -21,7 +21,6 @@ public class Vector2d {
         return this.x >= other.x && this.y >= other.y;
     }
 
-    //klasa math
     public Vector2d upperRight(Vector2d other){
         int x, y;
         if( this.x >= other.x){
