@@ -4,13 +4,8 @@
     <list default="true" id="93956ae2-32b4-4475-a220-13645763fcf3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/projekt1/ecosystem/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/ecosystem/World.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/projekt1/map/IWorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/map/IWorldMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/projekt1/mechanics/MapVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/mechanics/MapVisualizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/projekt1/mechanics/Vector2d.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/projekt1/mechanics/Vector2d.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/main/projekt1/map/EvoMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/projekt1/map/EvoMapTest.java" afterDir="false" />
     </list>
@@ -29,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/World.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+            <state relative-caret-position="800">
+              <caret line="50" column="110" selection-start-line="50" selection-start-column="110" selection-end-line="50" selection-end-column="110" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,16 +36,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="163" column="43" lean-forward="true" selection-start-line="163" selection-start-column="43" selection-end-line="163" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#6121#6122#0" expanded="true" />
-                <element signature="e#6178#6179#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="441">
+              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+              <caret line="64" column="36" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
+              <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
+              <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+              <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -58,29 +53,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+            <state relative-caret-position="277">
+              <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1778#1779#0" expanded="true" />
-                <element signature="e#1825#1826#0" expanded="true" />
-                <element signature="e#1889#1890#0" expanded="true" />
-                <element signature="e#1948#1949#0" expanded="true" />
-                <element signature="e#2802#2803#0" expanded="true" />
-                <element signature="e#2844#2845#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/IWorldMap.java">
+        <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/MapVisualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="117">
+              <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/EvoMapTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-52">
+              <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -129,16 +124,16 @@
         <option value="$PROJECT_DIR$/test/test/EvoAnimalTest.java" />
         <option value="$PROJECT_DIR$/test/main/projekt1/ecosystem/EvoAnimalTest.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/mechanics/IPositionChangeObserver.java" />
-        <option value="$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java" />
-        <option value="$PROJECT_DIR$/src/test/main/projekt1/map/EvoMapTest.java" />
         <option value="$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java" />
-        <option value="$PROJECT_DIR$/src/main/projekt1/mechanics/MapVisualizer.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/ecosystem/World.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/mechanics/Vector2d.java" />
-        <option value="$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/map/IWorldMap.java" />
-        <option value="$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java" />
         <option value="$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java" />
+        <option value="$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java" />
+        <option value="$PROJECT_DIR$/src/main/projekt1/mechanics/MapVisualizer.java" />
+        <option value="$PROJECT_DIR$/src/test/main/projekt1/map/EvoMapTest.java" />
+        <option value="$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java" />
+        <option value="$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java" />
       </list>
     </option>
   </component>
@@ -402,7 +397,7 @@
       <workItem from="1576656327595" duration="8826000" />
       <workItem from="1576684760225" duration="8322000" />
       <workItem from="1576746253313" duration="11169000" />
-      <workItem from="1576931685392" duration="10683000" />
+      <workItem from="1576931685392" duration="11733000" />
     </task>
     <servers />
   </component>
@@ -439,13 +434,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61645000" />
+    <option name="totallyTimeSpent" value="62695000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21862349" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21862349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -455,7 +449,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.3285968" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49959514" visible="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -504,13 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="36" column="67" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/ecosystem/EvoAnimalTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -521,44 +508,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/Grass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/EvoMapTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="48" column="51" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/parameters.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="50" column="110" selection-start-line="50" selection-start-column="110" selection-end-line="50" selection-end-column="110" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/Vector2d.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-573">
           <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/MapVisualizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="85" column="43" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -569,12 +525,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java">
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+        <state relative-caret-position="115">
+          <caret line="163" column="43" lean-forward="true" selection-start-line="163" selection-start-column="43" selection-end-line="163" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6120#6121#0" expanded="true" />
+            <element signature="e#6177#6178#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -589,30 +547,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java">
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/Grass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+        <state relative-caret-position="128">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/EvoAnimal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1051">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1825#1826#0" expanded="true" />
-            <element signature="e#1889#1890#0" expanded="true" />
-            <element signature="e#1948#1949#0" expanded="true" />
-            <element signature="e#2802#2803#0" expanded="true" />
-            <element signature="e#2844#2845#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/EvoMap.java">
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/mechanics/MapVisualizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="163" column="43" lean-forward="true" selection-start-line="163" selection-start-column="43" selection-end-line="163" selection-end-column="43" />
+        <state relative-caret-position="117">
+          <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/EvoMapTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/main/projekt1/map/AbstractWorldMapTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <caret line="64" column="36" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
+          <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
+          <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/map/AbstractWorldMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6121#6122#0" expanded="true" />
-            <element signature="e#6178#6179#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/projekt1/ecosystem/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="50" column="110" selection-start-line="50" selection-start-column="110" selection-end-line="50" selection-end-column="110" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

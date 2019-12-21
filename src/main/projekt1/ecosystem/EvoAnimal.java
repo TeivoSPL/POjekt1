@@ -1,13 +1,11 @@
 package main.projekt1.ecosystem;
 
 import main.projekt1.map.EvoMap;
-import main.projekt1.map.IWorldMap;
 import main.projekt1.mechanics.IPositionChangeObserver;
 import main.projekt1.mechanics.MapDirection;
 import main.projekt1.mechanics.Vector2d;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
 public class EvoAnimal {
@@ -20,17 +18,24 @@ public class EvoAnimal {
     private ArrayList<Integer> genome;
 
     public EvoAnimal(EvoMap map, Vector2d initialPosition, int energy){
-        this.orientation = MapDirection.NORTH;      //dodać randomowość
+        this.orientation = MapDirection.NORTH;
+        int rotation = (int)(Math.random()*8);
+        for(int i=0;i<rotation;i++){
+            this.orientation = this.orientation.next();
+        }
+
         this.observers = new LinkedList<>();
         this.map = map;
+        this.addObserver(map);
+
         this.placement = this.adjustPosition(initialPosition);
         this.energy = energy;
+
         this.genome = new ArrayList<>();
         for(int i=0;i<32;i++){
             genome.add((int)(Math.random()*8));
         }
         this.genome.sort(Integer::compareTo);
-        this.addObserver(map);
     }
 
     public EvoAnimal(EvoMap map, Vector2d initialPosition, ArrayList<Integer> genome, MapDirection orientation, int energy){

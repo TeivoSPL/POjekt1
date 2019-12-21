@@ -22,9 +22,9 @@ public class EvoMapTest {
 
         map.run();
 
-        assertNull(map.objectAt(new Vector2d(2,2)));
-        assertNull(map.objectAt(new Vector2d(2,23)));
-        assertNull(map.objectAt(new Vector2d(0,0)));
+        assertNull(map.animalsAt(new Vector2d(2,2)));
+        assertNull(map.animalsAt(new Vector2d(2,23)));
+        assertNull(map.animalsAt(new Vector2d(0,0)));
     }
 
     @Test

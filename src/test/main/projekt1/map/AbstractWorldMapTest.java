@@ -50,7 +50,7 @@ public class AbstractWorldMapTest {
     }
 
     @Test
-    public void objectAt() {
+    public void animalsAt() {
         EvoMap map = new EvoMap(100,30,10,1,5,0.5);
 
         EvoAnimal animal1 = new EvoAnimal(map, new Vector2d(2,2),10);
@@ -62,12 +62,12 @@ public class AbstractWorldMapTest {
         map.place(animal2);
         map.place(animal3);
 
-        assertNotNull(map.objectAt(new Vector2d(2,2)));
-        assertNotNull(map.objectAt(new Vector2d(2,23)));
-        assertNotNull(map.objectAt(new Vector2d(0,0)));
+        assertNotNull(map.animalsAt(new Vector2d(2,2)));
+        assertNotNull(map.animalsAt(new Vector2d(2,23)));
+        assertNotNull(map.animalsAt(new Vector2d(0,0)));
 
-        assertNull(map.objectAt(new Vector2d(0,1)));
-        assertNull(map.objectAt(new Vector2d(1,0)));
+        assertNull(map.animalsAt(new Vector2d(0,1)));
+        assertNull(map.animalsAt(new Vector2d(1,0)));
     }
 
 

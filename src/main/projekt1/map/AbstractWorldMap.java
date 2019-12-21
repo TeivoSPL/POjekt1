@@ -33,17 +33,13 @@ public abstract class AbstractWorldMap implements IWorldMap, IPositionChangeObse
     public void run() {
 
         //death round - kill all animals without energy
-        for(LinkedList<EvoAnimal> animalsOnPosition: this.animalsOnPosition.values()){
+        for(EvoAnimal a : animalsOnMap){
+            if(a.getEnergy()<=0){
+                this.animalsOnPosition.get(a.getPlacement()).remove(a);
+                this.animalsOnMap.remove(a);
 
-            for(EvoAnimal a : animalsOnPosition)
-            {
-                if(a.getEnergy()<=0){
-                    this.animalsOnPosition.get(a.getPlacement()).remove(a);
-                    this.animalsOnMap.remove(a);
-
-                    if(this.animalsAt(a.getPlacement()).size()==0){
-                        this.animalsOnPosition.remove(a.getPlacement());
-                    }
+                if(this.animalsAt(a.getPlacement()).size()==0){
+                    this.animalsOnPosition.remove(a.getPlacement());
                 }
             }
 
